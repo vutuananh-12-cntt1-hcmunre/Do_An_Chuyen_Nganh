@@ -1,0 +1,17 @@
+
+text,label
+"Món ăn rất ngon, nhân viên phục vụ nhiệt tình",POSITIVE
+"Không gian nhà hàng đẹp, món ăn chất lượng",POSITIVE
+"Tôi rất hài lòng với trải nghiệm hôm nay",POSITIVE
+"Giá cả hợp lý, chắc chắn sẽ quay lại",POSITIVE
+"Đồ ăn tươi ngon và được trình bày đẹp",POSITIVE
+"Món ăn ở mức bình thường, không có gì đặc biệt",NEUTRAL
+"Chất lượng món ăn tương đối ổn",NEUTRAL
+"Không gian nhà hàng khá bình thường",NEUTRAL
+"Thời gian phục vụ ở mức chấp nhận được",NEUTRAL
+"Trải nghiệm ăn uống không có gì nổi bật",NEUTRAL
+"Món ăn nguội và không có hương vị",NEGATIVE
+"Nhân viên phục vụ rất chậm",NEGATIVE
+"Giá quá cao so với chất lượng món ăn",NEGATIVE
+"Tôi phải chờ gần một tiếng mới có đồ ăn",NEGATIVE
+"Không gian nhà hàng khá ồn và chật chội",NEGATIVE

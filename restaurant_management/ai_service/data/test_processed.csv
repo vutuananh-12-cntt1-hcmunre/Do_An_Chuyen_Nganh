@@ -1,0 +1,46 @@
+﻿text,label
+Món ăn được phục_vụ theo đúng thứ_tự đã gọi,NEUTRAL
+Nhà_hàng phục_vụ chu_đáo từ lúc đón khách đến khi thanh_toán,POSITIVE
+Nhà_hàng có tiếng ồn lớn khiến tôi không_thể trò_chuyện,NEGATIVE
+Nhân_viên phục_vụ rất chậm,NEGATIVE
+Nhà_hàng mở_cửa vào tất_cả các ngày trong tuần,NEUTRAL
+Tôi sử_dụng mã đặt bàn để xác_nhận thông_tin khi đến,NEUTRAL
+Thịt được chế_biến mềm và giữ được vị ngọt tự_nhiên,POSITIVE
+Nhà_hàng có khu_vực để xe dành cho khách,NEUTRAL
+Bữa ăn của tôi diễn ra vào_khoảng mười_hai giờ trưa,NEUTRAL
+"Món ăn_ở mức bình_thường , không có gì đặc_biệt",NEUTRAL
+Tôi phải chờ quá lâu mới được nhân_viên mang thực_đơn,NEGATIVE
+Tôi được phục_vụ đúng món và đúng yêu_cầu,POSITIVE
+"Đồ uống ngon , được phục_vụ trong ly sạch_sẽ",POSITIVE
+"Món lẩu có nước dùng đậm_đà , rau ăn kèm rất tươi",POSITIVE
+Tôi hài_lòng với chất_lượng món ăn và dịch_vụ,POSITIVE
+Thức_ăn được trình_bày cẩu_thả và thiếu vệ_sinh,NEGATIVE
+Tôi không muốn quay lại vì trải_nghiệm quá tệ,NEGATIVE
+Nhà_hàng có nhiều loại bàn với số_lượng ghế khác nhau,NEUTRAL
+Trải_nghiệm ăn_uống không có gì nổi_bật,NEUTRAL
+"Nhà_hàng sạch_sẽ , bàn_ghế được sắp_xếp gọn_gàng",POSITIVE
+Món ăn có vị đắng và mùi khét rất khó_chịu,NEGATIVE
+Nhân_viên tiếp_nhận và xử_lý yêu_cầu rất nhanh,POSITIVE
+"Phần ăn đầy_đủ , hương_vị đúng với mong_đợi của tôi",POSITIVE
+Thực_đơn được chia thành các nhóm món riêng_biệt,NEUTRAL
+Bàn ăn của tôi có bốn ghế_ngồi,NEUTRAL
+"Không_gian nhà_hàng đẹp , món ăn chất_lượng",POSITIVE
+Đồ uống có vị lạ và không đảm_bảo chất_lượng,NEGATIVE
+Tôi thanh_toán hoá_đơn bằng tiền_mặt,NEUTRAL
+Bữa ăn của tôi diễn ra vào buổi trưa,NEUTRAL
+Tôi rất thất_vọng vì chất_lượng phục_vụ không như cam_kết,NEGATIVE
+Các món ăn có cách kết_hợp nguyên_liệu rất thú_vị,POSITIVE
+Thực_đơn có thông_tin về các chương_trình khuyến_mãi,NEUTRAL
+Tôi không hài_lòng vì nhà_hàng xử_lý phản_ánh thiếu trách_nhiệm,NEGATIVE
+Giá_cả hợp_lý so với khẩu_phần và chất_lượng,POSITIVE
+Nhân_viên chủ_động hỏi_thăm và hỗ_trợ trong bữa ăn,POSITIVE
+Tôi nhận được món ăn khác hoàn_toàn với hình_ảnh quảng_cáo,NEGATIVE
+Món ăn có mùi ôi thiu khiến tôi không_thể tiếp_tục ăn,NEGATIVE
+Nhân_viên xác_nhận lại số_lượng món trước khi gửi bếp,NEUTRAL
+Nhân_viên phục_vụ tận_tình và luôn quan_tâm đến khách,POSITIVE
+Nhà_hàng có thực_đơn gồm nhiều món khác nhau,NEUTRAL
+Nhà_hàng không vệ_sinh bàn sau khi khách trước rời đi,NEGATIVE
+Thức_ăn mang ra đã nguội dù tôi vừa_mới gọi món,NEGATIVE
+Thịt có mùi khó_chịu và không được chế_biến kỹ,NEGATIVE
+Phòng ăn có mùi khó_chịu và không được thông_thoáng,NEGATIVE
+Giá món ăn phù_hợp với chất_lượng nhận được,POSITIVE

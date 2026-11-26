@@ -1,0 +1,491 @@
+
+/* =====================================
+   FEEDBACK MODAL - OVERLAY
+===================================== */
+
+.feedback-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(5px);
+}
+
+/* =====================================
+   MODAL CONTAINER
+===================================== */
+
+.feedback-modal {
+    width: 100%;
+    max-width: 680px;
+    max-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+    animation: feedbackModalIn 0.2s ease;
+}
+
+@keyframes feedbackModalIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.feedback-header {
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 24px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.feedback-header h2 {
+    margin: 0;
+
+    color: #111827;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.feedback-header p {
+    margin: 6px 0 0;
+
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.feedback-close {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f3f4f6;
+    color: #4b5563;
+
+    font-size: 24px;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.feedback-close:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* =====================================
+   SCROLLABLE CONTENT
+===================================== */
+
+.feedback-content {
+    flex: 1;
+    min-height: 0;
+
+    padding: 22px 24px;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.feedback-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.feedback-content::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+}
+
+/* =====================================
+   SECTION CARDS
+===================================== */
+
+.feedback-section {
+    padding: 20px;
+    margin-bottom: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.feedback-section-heading {
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.feedback-section-heading h3 {
+    margin: 0;
+
+    color: #1f2937;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.feedback-section-heading p {
+    margin: 6px 0 0;
+
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+/* =====================================
+   DISH CARDS
+===================================== */
+
+.feedback-dish-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.feedback-dish {
+    padding: 16px;
+
+    background: #f9fafb;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    transition: border-color 0.2s;
+}
+
+.feedback-dish:hover {
+    border-color: #cbd5e1;
+}
+
+.feedback-dish h4 {
+    margin: 0 0 14px;
+
+    color: #374151;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* =====================================
+   STAR RATING
+===================================== */
+
+.feedback-stars {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    margin-bottom: 14px;
+}
+
+.feedback-star {
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    color: #d1d5db;
+    font-size: 30px;
+    line-height: 1;
+
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.feedback-star.active {
+    color: #f59e0b;
+}
+
+.feedback-star:hover:not(:disabled) {
+    transform: scale(1.15);
+}
+
+.feedback-star:disabled {
+    cursor: default;
+}
+
+.feedback-star-value {
+    margin-left: 8px;
+
+    color: #6b7280;
+    font-size: 13px;
+}
+
+/* =====================================
+   TEXTAREA
+===================================== */
+
+.feedback-textarea {
+    display: block;
+
+    width: 100%;
+    min-height: 105px;
+
+    padding: 12px 14px;
+
+    box-sizing: border-box;
+    resize: vertical;
+
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #ffffff;
+    color: #111827;
+
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.6;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.feedback-textarea::placeholder {
+    color: #9ca3af;
+}
+
+.feedback-textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.feedback-textarea:disabled {
+    background: #f3f4f6;
+    cursor: not-allowed;
+}
+
+/* =====================================
+   FORM FOOTER
+===================================== */
+
+.feedback-form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 12px;
+}
+
+.feedback-form-footer small {
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+/* =====================================
+   SUBMIT BUTTON
+===================================== */
+
+.feedback-submit {
+    min-height: 40px;
+
+    padding: 9px 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.feedback-submit:hover:not(:disabled) {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.feedback-submit:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* =====================================
+   COMPLETED FEEDBACK
+===================================== */
+
+.feedback-completed {
+    padding: 14px;
+
+    background: #f0fdf4;
+
+    border: 1px solid #bbf7d0;
+    border-radius: 9px;
+}
+
+.feedback-completed p {
+    margin: 8px 0;
+
+    color: #374151;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.feedback-completed > span {
+    display: inline-block;
+
+    margin-top: 5px;
+
+    color: #15803d;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* =====================================
+   ERROR / EMPTY / LOADING
+===================================== */
+
+.feedback-error {
+    padding: 12px 14px;
+    margin-bottom: 16px;
+
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+
+    color: #dc2626;
+    font-size: 14px;
+}
+
+.feedback-empty {
+    padding: 18px;
+
+    color: #9ca3af;
+    font-size: 14px;
+    text-align: center;
+}
+
+.feedback-loading {
+    padding: 40px 20px;
+
+    color: #6b7280;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* =====================================
+   BOTTOM FOOTER
+===================================== */
+
+.feedback-bottom {
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: flex-end;
+
+    padding: 16px 24px;
+
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+}
+
+.feedback-cancel {
+    min-width: 90px;
+
+    padding: 10px 20px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #374151;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.feedback-cancel:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 600px) {
+    .feedback-overlay {
+        padding: 10px;
+    }
+
+    .feedback-modal {
+        max-height: 95vh;
+        border-radius: 12px;
+    }
+
+    .feedback-header {
+        padding: 16px;
+    }
+
+    .feedback-header h2 {
+        font-size: 18px;
+    }
+
+    .feedback-content {
+        padding: 14px;
+    }
+
+    .feedback-section {
+        padding: 15px;
+        margin-bottom: 14px;
+    }
+
+    .feedback-dish {
+        padding: 13px;
+    }
+
+    .feedback-star {
+        font-size: 27px;
+    }
+
+    .feedback-bottom {
+        padding: 13px 16px;
+    }
+}

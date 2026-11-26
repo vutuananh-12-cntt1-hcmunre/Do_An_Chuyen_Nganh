@@ -1,0 +1,211 @@
+﻿text,label
+"Thời_gian phục_vụ nhanh , không phải chờ_đợi lâu",POSITIVE
+"Trên thực_đơn có các món gà , bò và hải_sản",NEUTRAL
+Nhân_viên không xin_lỗi khi phục_vụ sai món,NEGATIVE
+Thực_đơn có thông_tin về giá của từng món ăn,NEUTRAL
+"Món ăn rất ngon , nhân_viên phục_vụ nhiệt_tình",POSITIVE
+Bữa ăn gồm một món chính và hai món ăn kèm,NEUTRAL
+Nhà_hàng có cung_cấp dịch_vụ giao món tận nơi,NEUTRAL
+Thực_đơn có ghi_chú một_số món có chứa hải_sản,NEUTRAL
+Tôi dùng_bữa tại tầng một của nhà_hàng,NEUTRAL
+Phần ăn đầy_đủ và có mức giá hợp_lý,POSITIVE
+Nhân_viên không giải_thích rõ khi tôi hỏi về món ăn,NEGATIVE
+Bữa ăn có hai người_lớn và một trẻ_em,NEUTRAL
+Giá trên hoá_đơn cao hơn giá được niêm_yết,NEGATIVE
+Nhà_hàng có nhận phục_vụ tiệc sinh_nhật,NEUTRAL
+Nhà_hàng có nhận thanh_toán bằng chuyển_khoản ngân_hàng,NEUTRAL
+Tôi rất thích cách nhà_hàng trình_bày các món ăn,POSITIVE
+Rau ăn kèm bị héo và không còn tươi,NEGATIVE
+Tôi gọi một phần salad và một phần thịt nướng,NEUTRAL
+Thực_đơn có ghi thông_tin về thành_phần của một_số món,NEUTRAL
+Thức_ăn quá nhiều dầu_mỡ và gây cảm_giác ngấy,NEGATIVE
+Vị_trí ngồi thoải_mái và không_gian rất dễ_chịu,POSITIVE
+Nhân_viên phục_vụ lịch_sự và rất chuyên_nghiệp,POSITIVE
+Thức_ăn lên nhanh và còn nóng_hổi,POSITIVE
+"Món cá được chế_biến rất ngon , thịt cá mềm và ngọt",POSITIVE
+Gia_đình tôi rất hài_lòng với bữa ăn hôm_nay,POSITIVE
+Nhà_hàng không có biện_pháp xử_lý khi khách phản_ánh món ăn,NEGATIVE
+Tôi đánh_giá cao cách nhân_viên xử_lý yêu_cầu của khách,POSITIVE
+Nhà_hàng giao thiếu món nhưng không có hướng xử_lý phù_hợp,NEGATIVE
+Đồ uống quá ngọt và không giống mô_tả trong thực_đơn,NEGATIVE
+Tôi đi ăn cùng gia_đình vào ngày chủ_nhật,NEUTRAL
+Nhà_hàng có thực_đơn điện_tử để khách xem món,NEUTRAL
+Tôi cảm_thấy thoải_mái khi dùng_bữa tại đây,POSITIVE
+Tôi gọi món mì và một phần nước uống,NEUTRAL
+"Món ăn được nêm nếm vừa_miệng , rất ngon",POSITIVE
+Khẩu_phần ăn_ở mức vừa đủ,NEUTRAL
+Nhà_hàng có vị_trí thuận_tiện và dễ tìm,POSITIVE
+Nhà_hàng có dịch_vụ tốt và quy_trình phục_vụ chuyên_nghiệp,POSITIVE
+Nhân_viên mang thực_đơn đến sau khi khách ngồi vào bàn,NEUTRAL
+Nhân_viên xử_lý yêu_cầu đổi món rất nhiệt_tình,POSITIVE
+Nhân_viên phản_hồi khiếu_nại với thái_độ khó_chịu,NEGATIVE
+Món tráng_miệng rất ngon và có cách trình_bày bắt_mắt,POSITIVE
+"Nhân_viên vui_vẻ , luôn sẵn_sàng hỗ_trợ",POSITIVE
+Tôi chọn món ăn trong danh_sách món chính,NEUTRAL
+Tôi rất hài_lòng với chất_lượng món ăn_ở đây,POSITIVE
+Tôi rất thích hương_vị của món hải_sản tại đây,POSITIVE
+Tôi chọn hình_thức thanh_toán bằng thẻ ngân_hàng,NEUTRAL
+Khu_vực ăn_uống được vệ_sinh sạch_sẽ,POSITIVE
+Thời_gian chờ món nhanh và quy_trình phục_vụ thuận_tiện,POSITIVE
+Món ăn có khẩu_vị vừa_phải,NEUTRAL
+Tôi không hài_lòng với chất_lượng phục_vụ,NEGATIVE
+"Trên bàn có sẵn muỗng , đũa và khăn giấy",NEUTRAL
+Nhân_viên làm đổ thức_ăn nhưng không xin_lỗi khách,NEGATIVE
+Tôi thanh_toán sau khi dùng xong bữa ăn,NEUTRAL
+Món ăn nguội và không có hương_vị,NEGATIVE
+Nhân_viên xác_nhận số_lượng khách trước khi xếp bàn,NEUTRAL
+Tôi đánh_giá cao sự chuyên_nghiệp của đội_ngũ nhân_viên,POSITIVE
+Nhân_viên gửi hoá_đơn sau khi hoàn_tất thanh_toán,NEUTRAL
+Nhân_viên không phản_hồi khi tôi yêu_cầu hỗ_trợ,NEGATIVE
+"Không_gian nhà_hàng yên_tĩnh , phù_hợp cho gia_đình",POSITIVE
+Nhân_viên hỗ_trợ tôi tìm được món phù_hợp với khẩu_vị,POSITIVE
+Quy_trình gọi món đơn_giản và thuận_tiện,POSITIVE
+Mỗi bàn đều có mã để khách xem thực_đơn,NEUTRAL
+Nhà_hàng có cung_cấp hoá_đơn sau khi thanh_toán,NEUTRAL
+Tôi gọi một phần cơm và một ly nước cam,NEUTRAL
+Khách_hàng có_thể lựa_chọn ăn tại_chỗ hoặc mang về,NEUTRAL
+Nhà_hàng có khu_vực chờ dành cho khách,NEUTRAL
+Tôi ngồi ở bàn số năm trong khu_vực bên trong,NEUTRAL
+Đồ_ăn lên rất lâu dù nhà_hàng không đông khách,NEGATIVE
+Thức_ăn được đóng_gói cẩn_thận khi khách mang về,POSITIVE
+Nhà_hàng có phục_vụ nước_lọc cho khách,NEUTRAL
+Nhà_hàng có nhận đặt bàn trước qua điện_thoại,NEUTRAL
+Tôi thích cách phục_vụ chuyên_nghiệp ở đây,POSITIVE
+Đồ_ăn được phục_vụ nóng và đúng thời_gian,POSITIVE
+"Không_gian được bố_trí đẹp , bàn ăn rộng_rãi",POSITIVE
+Nhân_viên liên_tục phớt_lờ khi tôi gọi để nhờ hỗ_trợ,NEGATIVE
+Bữa ăn của tôi gồm hai món chính và một món canh,NEUTRAL
+Nhân_viên không hỗ_trợ khi khách gặp vấn_đề với hoá_đơn,NEGATIVE
+Các món ăn được trang_trí đẹp_mắt và hấp_dẫn,POSITIVE
+Nhân_viên nhiệt_tình hướng_dẫn tôi chọn món,POSITIVE
+Tôi đến nhà_hàng bằng xe_máy vào buổi chiều,NEUTRAL
+Thức_ăn được đóng_gói cẩn_thận khi mang về,POSITIVE
+Bàn ăn dính dầu_mỡ và dụng_cụ ăn_uống không sạch,NEGATIVE
+Tôi gọi thêm một món ăn sau khi đã dùng món chính,NEUTRAL
+"Thịt bò mềm , rau tươi và nước dùng rất ngon",POSITIVE
+Không_gian nhà_hàng quá chật và thiếu chỗ ngồi,NEGATIVE
+Món ăn bị cháy ở một_số chỗ và có vị đắng,NEGATIVE
+Khẩu_phần quá ít so với số tiền phải trả,NEGATIVE
+Tôi phải gọi nhân_viên nhiều lần mới được phục_vụ,NEGATIVE
+Chất_lượng món ăn và dịch_vụ đều khiến tôi thất_vọng,NEGATIVE
+Nhà_hàng phục_vụ cả món ăn tại_chỗ và mang về,NEUTRAL
+"Phần ăn gồm cơm , thịt và một phần rau",NEUTRAL
+Chắc_chắn tôi sẽ giới_thiệu nhà_hàng cho bạn_bè,POSITIVE
+Tôi chọn chỗ ngồi gần khu_vực cửa ra vào,NEUTRAL
+Nhà_hàng có phục_vụ các món ăn_theo phần và theo nhóm,NEUTRAL
+Nhân_viên phục_vụ nhanh_chóng và luôn giữ thái_độ vui_vẻ,POSITIVE
+Tôi đi cùng hai người bạn đến nhà_hàng,NEUTRAL
+Nhà_hàng có không_gian thoáng mát và trang_trí đẹp,POSITIVE
+Món ăn được mang ra không đúng với yêu_cầu,NEGATIVE
+"Món bò được chế_biến mềm , nước sốt rất đậm_đà",POSITIVE
+Nhân_viên thân_thiện và hỗ_trợ khách_hàng chu_đáo,POSITIVE
+Không_gian nhà_hàng khá ồn và chật_chội,NEGATIVE
+Nhân_viên xác_nhận đơn hàng trước khi gửi đến bếp,NEUTRAL
+Nhân_viên bỏ_qua yêu_cầu của khách dù đã được nhắc lại,NEGATIVE
+Bàn ăn chưa được dọn sạch khi chúng_tôi đến,NEGATIVE
+Món súp nóng_hổi và có hương_vị rất vừa_miệng,POSITIVE
+Nhân_viên giao nhầm đơn hàng và không chịu giải_quyết,NEGATIVE
+Nhà_hàng nhận đơn đặt món qua ứng_dụng trực_tuyến,NEUTRAL
+Thực_đơn có ghi tên món và giá bán tương_ứng,NEUTRAL
+Khu_vực ăn_uống sạch_sẽ và có ánh_sáng dễ_chịu,POSITIVE
+Nhân_viên phục_vụ làm mất đơn gọi món của tôi,NEGATIVE
+Nhà_hàng có phục_vụ các món ăn_chay,NEUTRAL
+Tôi cảm_thấy không đáng tiền khi dùng_bữa tại đây,NEGATIVE
+Tôi rất thích cách nhà_hàng chăm_sóc khách_hàng,POSITIVE
+Tôi gọi một phần phở và một cốc trà đá,NEUTRAL
+Phần cơm của tôi có thêm một bát canh,NEUTRAL
+Món ăn có mùi lạ khiến tôi không_thể tiếp_tục dùng_bữa,NEGATIVE
+Nhân_viên kiểm_tra lại thông_tin đặt bàn trước khi xác_nhận,NEUTRAL
+Gia_đình tôi đã có một bữa ăn rất vui_vẻ tại đây,POSITIVE
+Tôi gọi một phần cơm gà và một chai nước suối,NEUTRAL
+Nhân_viên giải_quyết yêu_cầu của tôi rất nhanh_chóng,POSITIVE
+Nhân_viên hỏi số_lượng khách trước khi sắp_xếp bàn,NEUTRAL
+Nhân_viên luôn vui_vẻ và sẵn_sàng giải_đáp thắc_mắc,POSITIVE
+Nhân_viên làm mất thời_gian của khách khi xử_lý thanh_toán,NEGATIVE
+Thời_gian giao hàng chậm hơn nhiều so với dự_kiến,NEGATIVE
+Nhà_hàng tính thêm phí mà không thông_báo trước,NEGATIVE
+Tôi phải chờ gần một tiếng mới có đồ_ăn,NEGATIVE
+Nhân_viên luôn giữ thái_độ niềm_nở khi phục_vụ,POSITIVE
+Nhân_viên mang hoá_đơn đến bàn sau khi khách yêu_cầu,NEUTRAL
+"Thực_phẩm tươi ngon , hương_vị món ăn rất hấp_dẫn",POSITIVE
+Đồ_ăn nóng và được mang ra ngay sau khi chế_biến,POSITIVE
+Chất_lượng món ăn tương_đối ổn,NEUTRAL
+Nhà_hàng không giao đủ món theo đơn hàng của tôi,NEGATIVE
+Giá_cả phù_hợp với chất_lượng và khẩu_phần món ăn,POSITIVE
+"Nguyên_liệu tươi ngon , món ăn có hương_vị tự_nhiên",POSITIVE
+Đồ_ăn tươi ngon và được trình_bày đẹp,POSITIVE
+Không_gian nhà_hàng có mùi thuốc_lá rất khó_chịu,NEGATIVE
+Mức giá của các món ăn_nằm trong khoảng trung_bình,NEUTRAL
+Tôi chọn một món khai_vị và hai món chính,NEUTRAL
+Không_gian có bàn_ghế và hệ_thống điều_hoà,NEUTRAL
+Đây là địa_điểm ăn_uống mà tôi muốn ghé lại,POSITIVE
+Bàn ăn_bẩn và có nhiều thức_ăn thừa từ khách trước,NEGATIVE
+Nhân_viên phục_vụ nói_chuyện thiếu lịch_sự với khách,NEGATIVE
+"Món ăn quá mặn , gần như không_thể thưởng_thức",NEGATIVE
+Nhân_viên có thái_độ thiếu thân_thiện với khách,NEGATIVE
+Trên hoá_đơn có thông_tin tên món và số_lượng,NEUTRAL
+Tôi nhận được món ăn có nguyên_liệu không còn tươi,NEGATIVE
+Thời_gian giao hàng quá lâu khiến món ăn bị hỏng chất_lượng,NEGATIVE
+Không_gian nóng_bức và thiếu thông_thoáng,NEGATIVE
+Tôi chắc_chắn sẽ quay lại để thưởng_thức thêm các món khác,POSITIVE
+Thịt trong món ăn bị dai và rất khó nhai,NEGATIVE
+Đồ uống có vị nhạt và không giống như mong_đợi,NEGATIVE
+Thức_ăn không còn tươi và có mùi khó_chịu,NEGATIVE
+Thời_gian phục_vụ ở mức chấp_nhận được,NEUTRAL
+"Nhà_hàng trang_trí đẹp , tạo cảm_giác dễ_chịu",POSITIVE
+Đây là một trải_nghiệm ăn_uống tuyệt_vời,POSITIVE
+Nhà_hàng có thực_đơn riêng cho các món khai_vị,NEUTRAL
+Nhân_viên nhanh_chóng hỗ_trợ khi tôi cần thêm dụng_cụ,POSITIVE
+Nhà_hàng có khu_vực dành cho khách đi theo nhóm,NEUTRAL
+Các món ăn được chuẩn_bị cẩn_thận và trình_bày hấp_dẫn,POSITIVE
+"Thực_đơn được chia thành món chính , món phụ và đồ uống",NEUTRAL
+Nhà_hàng phục_vụ nhầm món dù tôi đã xác_nhận đơn,NEGATIVE
+Tôi đặt bàn cho buổi ăn tối vào ngày cuối tuần,NEUTRAL
+"Không_gian nhà_hàng rộng_rãi , sạch_sẽ và thoáng mát",POSITIVE
+Trên bàn có một lọ hoa và hộp đựng khăn giấy,NEUTRAL
+"Giá_cả hợp_lý , chắc_chắn sẽ quay lại",POSITIVE
+Phần ăn bị thiếu nguyên_liệu so với mô_tả trên thực_đơn,NEGATIVE
+Bàn ăn đặt trước không được chuẩn_bị đầy_đủ,NEGATIVE
+Thức_ăn có quá nhiều gia_vị khiến tôi không_thể ăn hết,NEGATIVE
+Tôi phải chờ rất lâu dù đã đặt món từ trước,NEGATIVE
+Trên thực_đơn có các món dành cho trẻ_em,NEUTRAL
+Nhân_viên không quan_tâm khi tôi yêu_cầu hỗ_trợ,NEGATIVE
+Món gà nướng có lớp da giòn và phần thịt rất mềm,POSITIVE
+Món ăn có hương_vị hài_hoà và nguyên_liệu tươi,POSITIVE
+Tôi chọn bàn ở khu_vực gần cửa_sổ,NEUTRAL
+Món ăn được phục_vụ đúng nhiệt_độ và rất vừa_miệng,POSITIVE
+Phần ăn được phục_vụ cùng một chén nước_chấm,NEUTRAL
+Nhà_hàng có cách bố_trí bàn_ghế rất hợp_lý,POSITIVE
+Bữa ăn có một món canh và một món rau,NEUTRAL
+Phần ăn không đúng với hình_ảnh giới_thiệu trên thực_đơn,NEGATIVE
+Đồ_ăn giao đến bị nguội_lạnh và không được đóng_gói kỹ,NEGATIVE
+Nhân_viên thông_báo tổng_số tiền trước khi thanh_toán,NEUTRAL
+Tôi đến nhà_hàng vào_khoảng bảy giờ tối,NEUTRAL
+Nhà_hàng giao món sai và xử_lý khiếu_nại rất chậm,NEGATIVE
+Nhân_viên đưa thực_đơn cho tôi sau khi sắp_xếp chỗ ngồi,NEUTRAL
+Tôi nhận được hoá_đơn tính sai số_lượng món đã gọi,NEGATIVE
+Đồ uống được pha_chế ngon và vừa khẩu_vị,POSITIVE
+"Nhà_hàng sạch_sẽ , không_gian thoải_mái",POSITIVE
+Nhân_viên phục_vụ có thái_độ cáu_gắt và thiếu tôn_trọng,NEGATIVE
+Thức_ăn không được nấu chín hoàn_toàn,NEGATIVE
+Đồ_ăn giao đến bị đổ ra ngoài hộp,NEGATIVE
+Món ăn có vị quá nhạt và thiếu_gia_vị,NEGATIVE
+"Nguyên_liệu tươi , món ăn được chế_biến cẩn_thận",POSITIVE
+Đồ_ăn mang về bị đổ và đóng_gói rất sơ_sài,NEGATIVE
+Phần ăn quá nhỏ khiến tôi cảm_thấy không xứng_đáng với giá tiền,NEGATIVE
+Phần ăn được chuẩn_bị đầy_đủ và trang_trí đẹp_mắt,POSITIVE
+Mỗi phần ăn có một mức giá được ghi trên thực_đơn,NEUTRAL
+Món ăn quá mặn và không_thể điều_chỉnh lại,NEGATIVE
+Tôi đặt hai phần ăn_thông qua ứng_dụng của nhà_hàng,NEUTRAL
+Bàn_ghế lung_lay và dụng_cụ ăn_uống không được vệ_sinh,NEGATIVE
+Không_gian quá nóng và điều_hoà hoạt_động không hiệu_quả,NEGATIVE
+"Thực_đơn đa_dạng , có nhiều lựa_chọn phù_hợp",POSITIVE
+Món ăn có quá nhiều dầu_mỡ khiến tôi khó_chịu,NEGATIVE
+Giá món ăn quá đắt so với chất_lượng thực_tế,NEGATIVE
+Đây là nơi thích_hợp để tổ_chức những buổi gặp_mặt,POSITIVE
+Món ăn quá cay dù tôi đã yêu_cầu không cho nhiều ớt,NEGATIVE
+Phần ăn được phục_vụ kèm theo một chén nước_chấm,NEUTRAL
+Nhân_viên thu_ngân tính tiền sai nhưng không chịu kiểm_tra lại,NEGATIVE
+Đồ_ăn mang về vẫn giữ được hương_vị thơm ngon,POSITIVE
+Thức_ăn không được chế_biến đúng theo yêu_cầu của tôi,NEGATIVE
+Tôi thanh_toán hoá_đơn bằng mã QR ngân_hàng,NEUTRAL

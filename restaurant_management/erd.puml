@@ -1,0 +1,387 @@
+@startuml
+hide circle
+skinparam linetype ortho
+skinparam monochrome true
+skinparam shadowing false
+skinparam dpi 150
+
+' --- NHOM 1: NGUOI DUNG & PHAN QUYEN ---
+entity "users" as users {
+  *user_id : INT <<PK>>
+  --
+  *username : VARCHAR(50) <<UK>>
+  *email : VARCHAR(255) <<UK>>
+  *password_hash : VARCHAR(255)
+  *full_name : NVARCHAR(255)
+  *phone : VARCHAR(10)
+  *is_active : BIT
+  *created_at : DATETIME2
+  *updated_at : DATETIME2
+}
+
+entity "roles" as roles {
+  *role_id : INT <<PK>>
+  --
+  *role_name : VARCHAR(30) <<UK>>
+  description : NVARCHAR(255)
+}
+
+entity "user_roles" as user_roles {
+  *user_id : INT <<PK, FK>>
+  *role_id : INT <<PK, FK>>
+  --
+  *assigned_at : DATETIME2
+}
+
+entity "employees" as employees {
+  *employee_id : INT <<PK>>
+  --
+  *user_id : INT <<FK, UK>>
+  *employee_code : VARCHAR(20) <<UK>>
+  *position : NVARCHAR(50)
+  hire_date : DATE
+  *employee_status : VARCHAR(20)
+  *created_at : DATETIME2
+}
+
+' --- NHOM 2: THUC DON & LICH SU GIA ---
+entity "categories" as categories {
+  *category_id : INT <<PK>>
+  --
+  *category_name : NVARCHAR(100) <<UK>>
+  *description : NVARCHAR(255)
+  *is_active : BIT
+  *created_at : DATETIME2
+}
+
+entity "dishes" as dishes {
+  *dish_id : INT <<PK>>
+  --
+  *category_id : INT <<FK>>
+  *dish_name : NVARCHAR(150)
+  *description : NVARCHAR(500)
+  *current_price : DECIMAL(15,2)
+  *image_url : VARCHAR(500)
+  *is_available : BIT
+  *created_at : DATETIME2
+  *updated_at : DATETIME2
+}
+
+entity "dish_price_history" as dish_price_history {
+  *price_history_id : INT <<PK>>
+  --
+  *dish_id : INT <<FK>>
+  *changed_by : INT <<FK>>
+  *old_price : DECIMAL(15,2)
+  *new_price : DECIMAL(15,2)
+  *changed_at : DATETIME2
+  *change_reason : NVARCHAR(255)
+}
+
+' --- NHOM 3: BAN & DAT BAN ---
+entity "restaurant_tables" as restaurant_tables {
+  *table_id : INT <<PK>>
+  --
+  *table_code : VARCHAR(20) <<UK>>
+  *capacity : INT
+  *table_status : VARCHAR(20)
+  description : NVARCHAR(500)
+  *is_active : BIT
+  *created_at : DATETIME2
+}
+
+entity "reservations" as reservations {
+  *reservation_id : INT <<PK>>
+  --
+  *reservation_code : VARCHAR(30) <<UK>>
+  *user_id : INT <<FK>>
+  table_id : INT <<FK>>
+  *reservation_time : DATETIME2
+  *reservation_end_time : DATETIME2
+  *guest_count : INT
+  *reservation_status : VARCHAR(20)
+  customer_note : NVARCHAR(500)
+  *created_at : DATETIME2
+  *updated_at : DATETIME2
+}
+
+' --- NHOM 4: DON HANG, THANH TOAN, HOA DON & GIAO HANG ---
+entity "orders" as orders {
+  *order_id : INT <<PK>>
+  --
+  *order_code : VARCHAR(30) <<UK>>
+  *user_id : INT <<FK>>
+  table_id : INT <<FK>>
+  *order_type : VARCHAR(20)
+  *order_status : VARCHAR(30)
+  delivery_address : NVARCHAR(500)
+  customer_note : NVARCHAR(500)
+  *subtotal : DECIMAL(15,2)
+  *discount_amount : DECIMAL(15,2)
+  *delivery_fee : DECIMAL(15,2)
+  *total_amount : DECIMAL(15,2)
+  *created_at : DATETIME2
+  *updated_at : DATETIME2
+}
+
+entity "order_items" as order_items {
+  *order_item_id : INT <<PK>>
+  --
+  *order_id : INT <<FK>>
+  *dish_id : INT <<FK>>
+  *quantity : INT
+  *unit_price : DECIMAL(15,2)
+  *subtotal : DECIMAL(15,2)
+  item_note : NVARCHAR(255)
+  *item_status : VARCHAR(20)
+  sent_to_kitchen_at : DATETIME2
+  completed_at : DATETIME2
+}
+
+entity "payments" as payments {
+  *payment_id : INT <<PK>>
+  --
+  *order_id : INT <<FK>>
+  *payment_method : VARCHAR(30)
+  *payment_status : VARCHAR(20)
+  *amount : DECIMAL(15,2)
+  transaction_code : VARCHAR(100)
+  paid_at : DATETIME2
+  *created_at : DATETIME2
+}
+
+entity "invoices" as invoices {
+  *invoice_id : INT <<PK>>
+  --
+  *invoice_code : VARCHAR(30) <<UK>>
+  *order_id : INT <<FK, UK>>
+  *invoice_status : VARCHAR(20)
+  *subtotal : DECIMAL(15,2)
+  *discount_amount : DECIMAL(15,2)
+  *tax_amount : DECIMAL(15,2)
+  *total_amount : DECIMAL(15,2)
+  issued_at : DATETIME2
+  *created_at : DATETIME2
+}
+
+entity "deliveries" as deliveries {
+  *delivery_id : INT <<PK>>
+  --
+  *order_id : INT <<FK, UK>>
+  employee_id : INT <<FK>>
+  *delivery_status : VARCHAR(20)
+  assigned_at : DATETIME2
+  picked_up_at : DATETIME2
+  delivered_at : DATETIME2
+  delivery_note : NVARCHAR(500)
+  *created_at : DATETIME2
+  *updated_at : DATETIME2
+}
+
+' --- NHOM 5: KHUYEN MAI & NHOM KHACH HANG ---
+entity "promotions" as promotions {
+  *promotion_id : INT <<PK>>
+  --
+  *promotion_code : VARCHAR(30) <<UK>>
+  *promotion_name : NVARCHAR(255)
+  *description : NVARCHAR(500)
+  *discount_type : VARCHAR(20)
+  *discount_value : DECIMAL(15,2)
+  *min_order_amount : DECIMAL(15,2)
+  max_discount_amount : DECIMAL(15,2)
+  *start_at : DATETIME2
+  *end_at : DATETIME2
+  usage_limit : INT
+  *used_count : INT
+  *is_active : BIT
+  *created_at : DATETIME2
+}
+
+entity "order_promotions" as order_promotions {
+  *order_id : INT <<PK, FK>>
+  --
+  *promotion_id : INT <<FK>>
+  *discount_amount : DECIMAL(15,2)
+  *applied_at : DATETIME2
+}
+
+entity "customer_groups" as customer_groups {
+  *customer_group_id : INT <<PK>>
+  --
+  *group_name : NVARCHAR(100) <<UK>>
+  description : NVARCHAR(255)
+  *is_active : BIT
+  *created_at : DATETIME2
+}
+
+entity "user_customer_groups" as user_customer_groups {
+  *user_id : INT <<PK, FK>>
+  *customer_group_id : INT <<PK, FK>>
+  --
+  *assigned_at : DATETIME2
+}
+
+entity "promotion_customer_groups" as promotion_customer_groups {
+  *promotion_id : INT <<PK, FK>>
+  *customer_group_id : INT <<PK, FK>>
+}
+
+' --- NHOM 6: KHO, DINH LUONG & NHAP HANG ---
+entity "suppliers" as suppliers {
+  *supplier_id : INT <<PK>>
+  --
+  *supplier_code : VARCHAR(20) <<UK>>
+  *supplier_name : NVARCHAR(255)
+  *phone : VARCHAR(10)
+  email : VARCHAR(255) <<UK>>
+  address : NVARCHAR(500)
+  *is_active : BIT
+  *created_at : DATETIME2
+}
+
+entity "ingredients" as ingredients {
+  *ingredient_id : INT <<PK>>
+  --
+  *ingredient_code : VARCHAR(20) <<UK>>
+  *ingredient_name : NVARCHAR(150)
+  *unit : NVARCHAR(30)
+  *stock_quantity : DECIMAL(15,3)
+  *min_stock_quantity : DECIMAL(15,3)
+  *is_active : BIT
+  *created_at : DATETIME2
+  *updated_at : DATETIME2
+}
+
+entity "purchase_receipts" as purchase_receipts {
+  *receipt_id : INT <<PK>>
+  --
+  *receipt_code : VARCHAR(30) <<UK>>
+  *supplier_id : INT <<FK>>
+  *employee_id : INT <<FK>>
+  *receipt_status : VARCHAR(20)
+  *total_amount : DECIMAL(15,2)
+  note : NVARCHAR(500)
+  *created_at : DATETIME2
+  confirmed_at : DATETIME2
+}
+
+entity "purchase_receipt_details" as purchase_receipt_details {
+  *receipt_detail_id : INT <<PK>>
+  --
+  *receipt_id : INT <<FK>>
+  *ingredient_id : INT <<FK>>
+  *quantity : DECIMAL(15,3)
+  *unit_price : DECIMAL(15,2)
+  *subtotal : DECIMAL(15,2)
+}
+
+entity "recipe_details" as recipe_details {
+  *recipe_detail_id : INT <<PK>>
+  --
+  *dish_id : INT <<FK>>
+  *ingredient_id : INT <<FK>>
+  *quantity_required : DECIMAL(15,3)
+  note : NVARCHAR(255)
+}
+
+entity "inventory_transactions" as inventory_transactions {
+  *inventory_transaction_id : INT <<PK>>
+  --
+  *ingredient_id : INT <<FK>>
+  employee_id : INT <<FK>>
+  *transaction_type : VARCHAR(20)
+  *quantity : DECIMAL(15,3)
+  reference_type : VARCHAR(30)
+  reference_id : INT
+  note : NVARCHAR(500)
+  *created_at : DATETIME2
+}
+
+' --- NHOM 7: PHAN HOI AI & TRO LY AO ---
+entity "feedbacks" as feedbacks {
+  *feedback_id : INT <<PK>>
+  --
+  *user_id : INT <<FK>>
+  order_id : INT <<FK>>
+  dish_id : INT <<FK>>
+  *rating : INT
+  content : NVARCHAR(1000)
+  *feedback_status : VARCHAR(20)
+  *created_at : DATETIME2
+  *updated_at : DATETIME2
+}
+
+entity "feedback_analysis" as feedback_analysis {
+  *analysis_id : INT <<PK>>
+  --
+  *feedback_id : INT <<FK>>
+  *sentiment : VARCHAR(20)
+  *confidence_score : DECIMAL(5,4)
+  analysis_result : NVARCHAR(1000)
+  *model_name : VARCHAR(100)
+  *analyzed_at : DATETIME2
+}
+
+entity "chat_sessions" as chat_sessions {
+  *session_id : INT <<PK>>
+  --
+  *user_id : INT <<FK>>
+  *session_status : VARCHAR(20)
+  *started_at : DATETIME2
+  ended_at : DATETIME2
+}
+
+entity "chat_messages" as chat_messages {
+  *message_id : INT <<PK>>
+  --
+  *session_id : INT <<FK>>
+  *sender_type : VARCHAR(20)
+  *message_content : NVARCHAR(MAX)
+  *sent_at : DATETIME2
+}
+
+' --- QUAN HE KHOA NGOAI ---
+users ||--o{ user_roles
+roles ||--o{ user_roles
+users ||--o| employees
+
+categories ||--o{ dishes
+dishes ||--o{ dish_price_history
+users ||--o{ dish_price_history
+
+users ||--o{ reservations
+restaurant_tables ||--o{ reservations
+
+users ||--o{ orders
+restaurant_tables ||--o{ orders
+orders ||--|{ order_items
+dishes ||--o{ order_items
+orders ||--o{ payments
+orders ||--|| invoices
+orders ||--o| deliveries
+employees ||--o{ deliveries
+
+orders ||--o| order_promotions
+promotions ||--o{ order_promotions
+users ||--o{ user_customer_groups
+customer_groups ||--o{ user_customer_groups
+promotions ||--o{ promotion_customer_groups
+customer_groups ||--o{ promotion_customer_groups
+
+suppliers ||--o{ purchase_receipts
+employees ||--o{ purchase_receipts
+purchase_receipts ||--|{ purchase_receipt_details
+ingredients ||--o{ purchase_receipt_details
+dishes ||--o{ recipe_details
+ingredients ||--o{ recipe_details
+ingredients ||--o{ inventory_transactions
+employees ||--o{ inventory_transactions
+
+users ||--o{ feedbacks
+orders ||--o{ feedbacks
+dishes ||--o{ feedbacks
+feedbacks ||--o{ feedback_analysis
+
+users ||--o{ chat_sessions
+chat_sessions ||--|{ chat_messages
+@enduml

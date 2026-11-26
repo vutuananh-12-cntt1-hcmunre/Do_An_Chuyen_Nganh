@@ -1,0 +1,302 @@
+
+text,label
+"Món ăn rất ngon, nhân viên phục vụ nhiệt tình",POSITIVE
+"Không gian nhà hàng đẹp, món ăn chất lượng",POSITIVE
+"Tôi rất hài lòng với trải nghiệm hôm nay",POSITIVE
+"Giá cả hợp lý, chắc chắn sẽ quay lại",POSITIVE
+"Đồ ăn tươi ngon và được trình bày đẹp",POSITIVE
+"Món ăn được nêm nếm vừa miệng, rất ngon",POSITIVE
+"Nhân viên thân thiện và hỗ trợ khách hàng chu đáo",POSITIVE
+"Nhà hàng sạch sẽ, không gian thoải mái",POSITIVE
+"Thức ăn lên nhanh và còn nóng hổi",POSITIVE
+"Tôi thích cách phục vụ chuyên nghiệp ở đây",POSITIVE
+"Phần ăn đầy đặn, giá tiền rất xứng đáng",POSITIVE
+"Đây là một trải nghiệm ăn uống tuyệt vời",POSITIVE
+"Nguyên liệu tươi, món ăn được chế biến cẩn thận",POSITIVE
+"Nhân viên vui vẻ, luôn sẵn sàng hỗ trợ",POSITIVE
+"Chắc chắn tôi sẽ giới thiệu nhà hàng cho bạn bè",POSITIVE
+"Món ăn ở mức bình thường, không có gì đặc biệt",NEUTRAL
+"Chất lượng món ăn tương đối ổn",NEUTRAL
+"Không gian nhà hàng khá bình thường",NEUTRAL
+"Thời gian phục vụ ở mức chấp nhận được",NEUTRAL
+"Trải nghiệm ăn uống không có gì nổi bật",NEUTRAL
+"Món ăn có khẩu vị vừa phải",NEUTRAL
+"Nhà hàng có thực đơn gồm nhiều món khác nhau",NEUTRAL
+"Nhân viên tiếp nhận yêu cầu và ghi món",NEUTRAL
+"Thời gian chờ món khoảng hai mươi phút",NEUTRAL
+"Mức giá của các món ăn nằm trong khoảng trung bình",NEUTRAL
+"Không gian có bàn ghế và hệ thống điều hòa",NEUTRAL
+"Món ăn được phục vụ theo đúng thứ tự đã gọi",NEUTRAL
+"Khẩu phần ăn ở mức vừa đủ",NEUTRAL
+"Nhà hàng nằm trên một con đường khá đông người",NEUTRAL
+"Tôi đã dùng bữa tại nhà hàng vào buổi tối",NEUTRAL
+"Món ăn nguội và không có hương vị",NEGATIVE
+"Nhân viên phục vụ rất chậm",NEGATIVE
+"Giá quá cao so với chất lượng món ăn",NEGATIVE
+"Tôi phải chờ gần một tiếng mới có đồ ăn",NEGATIVE
+"Không gian nhà hàng khá ồn và chật chội",NEGATIVE
+"Món ăn quá mặn, gần như không thể thưởng thức",NEGATIVE
+"Nhân viên có thái độ thiếu thân thiện với khách",NEGATIVE
+"Thức ăn không còn tươi và có mùi khó chịu",NEGATIVE
+"Bàn ăn chưa được dọn sạch khi chúng tôi đến",NEGATIVE
+"Đồ ăn lên rất lâu dù nhà hàng không đông khách",NEGATIVE
+"Khẩu phần quá ít so với số tiền phải trả",NEGATIVE
+"Tôi không hài lòng với chất lượng phục vụ",NEGATIVE
+"Món ăn được mang ra không đúng với yêu cầu",NEGATIVE
+"Không gian nóng bức và thiếu thông thoáng",NEGATIVE
+"Tôi sẽ không quay lại nhà hàng này",NEGATIVE
+"Món lẩu có nước dùng đậm đà, rau ăn kèm rất tươi",POSITIVE
+"Nhân viên tư vấn món ăn phù hợp với sở thích của tôi",POSITIVE
+"Nhà hàng trang trí đẹp, tạo cảm giác dễ chịu",POSITIVE
+"Thịt được chế biến mềm và giữ được vị ngọt tự nhiên",POSITIVE
+"Đồ uống ngon, được phục vụ trong ly sạch sẽ",POSITIVE
+"Nhân viên nhanh chóng hỗ trợ khi tôi cần thêm dụng cụ",POSITIVE
+"Món tráng miệng rất ngon và có cách trình bày bắt mắt",POSITIVE
+"Quy trình gọi món đơn giản và thuận tiện",POSITIVE
+"Tôi đánh giá cao sự chu đáo của nhân viên nhà hàng",POSITIVE
+"Thực đơn đa dạng, có nhiều lựa chọn phù hợp",POSITIVE
+"Thức ăn được đóng gói cẩn thận khi mang về",POSITIVE
+"Nhà hàng có vị trí thuận tiện và dễ tìm",POSITIVE
+"Món ăn được phục vụ đúng nhiệt độ và rất vừa miệng",POSITIVE
+"Nhân viên giải quyết yêu cầu của tôi rất nhanh chóng",POSITIVE
+"Gia đình tôi đã có một bữa ăn rất vui vẻ tại đây",POSITIVE
+"Tôi gọi một phần cơm và một ly nước cam",NEUTRAL
+"Nhà hàng phục vụ cả món ăn tại chỗ và mang về",NEUTRAL
+"Trên thực đơn có các món gà, bò và hải sản",NEUTRAL
+"Tôi đến nhà hàng vào khoảng bảy giờ tối",NEUTRAL
+"Nhân viên đưa thực đơn cho tôi sau khi sắp xếp chỗ ngồi",NEUTRAL
+"Phần ăn gồm cơm, thịt và một phần rau",NEUTRAL
+"Nhà hàng có khu vực dành cho khách đi theo nhóm",NEUTRAL
+"Tôi thanh toán hóa đơn bằng tiền mặt",NEUTRAL
+"Thực đơn có ghi tên món và giá bán tương ứng",NEUTRAL
+"Bữa ăn của tôi gồm hai món chính và một món canh",NEUTRAL
+"Nhà hàng có nhận đặt bàn trước qua điện thoại",NEUTRAL
+"Tôi sử dụng dịch vụ ăn uống tại nhà hàng vào cuối tuần",NEUTRAL
+"Nhân viên xác nhận lại số lượng món trước khi gửi bếp",NEUTRAL
+"Nhà hàng có phục vụ nước lọc cho khách",NEUTRAL
+"Tôi chọn bàn ở khu vực gần cửa sổ",NEUTRAL
+"Thịt trong món ăn bị dai và rất khó nhai",NEGATIVE
+"Nhân viên bỏ qua yêu cầu của khách dù đã được nhắc lại",NEGATIVE
+"Món ăn có mùi lạ khiến tôi không thể tiếp tục dùng bữa",NEGATIVE
+"Đồ uống quá ngọt và không giống mô tả trong thực đơn",NEGATIVE
+"Tôi nhận được hóa đơn tính sai số lượng món đã gọi",NEGATIVE
+"Nhà hàng không chuẩn bị bàn dù tôi đã đặt trước",NEGATIVE
+"Thức ăn được trình bày cẩu thả và thiếu vệ sinh",NEGATIVE
+"Nhân viên không giải thích rõ khi tôi hỏi về món ăn",NEGATIVE
+"Phòng ăn có mùi khó chịu và không được thông thoáng",NEGATIVE
+"Món ăn quá cay dù tôi đã yêu cầu không cho nhiều ớt",NEGATIVE
+"Đồ ăn mang về bị đổ và đóng gói rất sơ sài",NEGATIVE
+"Tôi phải gọi nhân viên nhiều lần mới được phục vụ",NEGATIVE
+"Nhà hàng giao thiếu món nhưng không có hướng xử lý phù hợp",NEGATIVE
+"Bàn ăn dính dầu mỡ và dụng cụ ăn uống không sạch",NEGATIVE
+"Trải nghiệm tại nhà hàng khiến tôi rất thất vọng",NEGATIVE
+"Món bò được chế biến mềm, nước sốt rất đậm đà",POSITIVE
+"Nhân viên chủ động hỏi thăm và hỗ trợ trong bữa ăn",POSITIVE
+"Không gian được bố trí đẹp, bàn ăn rộng rãi",POSITIVE
+"Món ăn có hương vị hài hòa và nguyên liệu tươi",POSITIVE
+"Tôi rất thích cách nhà hàng trình bày các món ăn",POSITIVE
+"Đồ ăn được mang ra nhanh hơn tôi mong đợi",POSITIVE
+"Nhân viên phục vụ lịch sự và rất chuyên nghiệp",POSITIVE
+"Giá món ăn phù hợp với chất lượng nhận được",POSITIVE
+"Gia đình tôi rất hài lòng với bữa ăn hôm nay",POSITIVE
+"Đồ uống được pha chế ngon và vừa khẩu vị",POSITIVE
+"Khu vực ăn uống sạch sẽ và có ánh sáng dễ chịu",POSITIVE
+"Nhân viên xử lý yêu cầu đổi món rất nhiệt tình",POSITIVE
+"Đồ ăn mang về vẫn giữ được hương vị thơm ngon",POSITIVE
+"Tôi đã có một buổi gặp mặt rất thoải mái tại đây",POSITIVE
+"Tôi gọi món mì và một phần nước uống",NEUTRAL
+"Nhà hàng có thực đơn riêng cho các món khai vị",NEUTRAL
+"Bữa ăn của tôi diễn ra vào buổi trưa",NEUTRAL
+"Nhân viên ghi nhận món ăn trước khi chuyển đến bếp",NEUTRAL
+"Trên bàn có sẵn khăn giấy và bộ dụng cụ ăn uống",NEUTRAL
+"Tôi đi cùng hai người bạn đến nhà hàng",NEUTRAL
+"Nhà hàng có cả khu vực trong nhà và ngoài trời",NEUTRAL
+"Mỗi bàn đều có mã để khách xem thực đơn",NEUTRAL
+"Tôi thanh toán sau khi dùng xong bữa ăn",NEUTRAL
+"Thực đơn có ghi thông tin về thành phần của một số món",NEUTRAL
+"Nhà hàng phục vụ khách từ buổi sáng đến buổi tối",NEUTRAL
+"Tôi chọn món ăn trong danh sách món chính",NEUTRAL
+"Nhân viên mang hóa đơn đến bàn sau khi khách yêu cầu",NEUTRAL
+"Bàn ăn của tôi có bốn ghế ngồi",NEUTRAL
+"Nhà hàng có cung cấp dịch vụ giao món tận nơi",NEUTRAL
+"Món ăn bị cháy ở một số chỗ và có vị đắng",NEGATIVE
+"Nhân viên phục vụ nói chuyện thiếu lịch sự với khách",NEGATIVE
+"Tôi đặt bàn trước nhưng khi đến vẫn phải chờ rất lâu",NEGATIVE
+"Rau ăn kèm bị héo và không còn tươi",NEGATIVE
+"Nhà hàng tính thêm phí mà không thông báo trước",NEGATIVE
+"Đồ uống có vị nhạt và không giống như mong đợi",NEGATIVE
+"Nhân viên làm đổ thức ăn nhưng không xin lỗi khách",NEGATIVE
+"Thức ăn mang ra đã nguội dù tôi vừa mới gọi món",NEGATIVE
+"Bàn ăn đặt trước không được chuẩn bị đầy đủ",NEGATIVE
+"Nhà hàng giao món sai và xử lý khiếu nại rất chậm",NEGATIVE
+"Món ăn có quá nhiều dầu mỡ khiến tôi khó chịu",NEGATIVE
+"Không gian nhà hàng có tiếng ồn lớn và khó trò chuyện",NEGATIVE
+"Phần ăn không đúng với hình ảnh giới thiệu trên thực đơn",NEGATIVE
+"Nhân viên không hỗ trợ khi khách gặp vấn đề với hóa đơn",NEGATIVE
+"Tôi cảm thấy không đáng tiền khi dùng bữa tại đây",NEGATIVE
+"Món cá được chế biến rất ngon, thịt cá mềm và ngọt",POSITIVE
+"Nhân viên phục vụ nhanh chóng và luôn giữ thái độ vui vẻ",POSITIVE
+"Không gian nhà hàng yên tĩnh, phù hợp cho gia đình",POSITIVE
+"Phần ăn được chuẩn bị đầy đủ và trang trí đẹp mắt",POSITIVE
+"Tôi rất hài lòng với chất lượng món ăn ở đây",POSITIVE
+"Nhà hàng có dịch vụ tốt và quy trình phục vụ chuyên nghiệp",POSITIVE
+"Thực phẩm tươi ngon, hương vị món ăn rất hấp dẫn",POSITIVE
+"Nhân viên nhiệt tình hướng dẫn tôi chọn món",POSITIVE
+"Giá cả hợp lý so với khẩu phần và chất lượng",POSITIVE
+"Món súp nóng hổi và có hương vị rất vừa miệng",POSITIVE
+"Nhà hàng sạch sẽ, bàn ghế được sắp xếp gọn gàng",POSITIVE
+"Tôi được phục vụ đúng món và đúng yêu cầu",POSITIVE
+"Đây là địa điểm ăn uống mà tôi muốn ghé lại",POSITIVE
+"Thời gian phục vụ nhanh, không phải chờ đợi lâu",POSITIVE
+"Các món ăn có cách kết hợp nguyên liệu rất thú vị",POSITIVE
+"Tôi gọi một phần salad và một phần thịt nướng",NEUTRAL
+"Nhà hàng có khu vực để xe dành cho khách",NEUTRAL
+"Thực đơn được chia thành các nhóm món riêng biệt",NEUTRAL
+"Bữa ăn có hai người lớn và một trẻ em",NEUTRAL
+"Tôi đặt bàn cho buổi ăn tối vào ngày cuối tuần",NEUTRAL
+"Nhân viên kiểm tra lại thông tin đặt bàn trước khi xác nhận",NEUTRAL
+"Nhà hàng có phục vụ các món ăn theo phần và theo nhóm",NEUTRAL
+"Tôi chọn hình thức thanh toán bằng thẻ ngân hàng",NEUTRAL
+"Trên bàn có một lọ hoa và hộp đựng khăn giấy",NEUTRAL
+"Thực đơn có thông tin về giá của từng món ăn",NEUTRAL
+"Tôi dùng bữa tại tầng một của nhà hàng",NEUTRAL
+"Nhà hàng nhận đơn đặt món qua ứng dụng trực tuyến",NEUTRAL
+"Phần cơm của tôi có thêm một bát canh",NEUTRAL
+"Nhân viên xác nhận số lượng khách trước khi xếp bàn",NEUTRAL
+"Tôi gọi thêm một món ăn sau khi đã dùng món chính",NEUTRAL
+"Món ăn có vị quá nhạt và thiếu gia vị",NEGATIVE
+"Nhân viên không quan tâm khi tôi yêu cầu hỗ trợ",NEGATIVE
+"Nhà hàng phục vụ nhầm món dù tôi đã xác nhận đơn",NEGATIVE
+"Thịt có mùi khó chịu và không được chế biến kỹ",NEGATIVE
+"Giá trên hóa đơn cao hơn giá được niêm yết",NEGATIVE
+"Bàn ăn bẩn và có nhiều thức ăn thừa từ khách trước",NEGATIVE
+"Tôi phải chờ quá lâu mới được nhân viên mang thực đơn",NEGATIVE
+"Món ăn quá nguội và không còn ngon khi được phục vụ",NEGATIVE
+"Nhân viên phản hồi khiếu nại với thái độ khó chịu",NEGATIVE
+"Nhà hàng không giao đủ món theo đơn hàng của tôi",NEGATIVE
+"Không gian quá nóng và điều hòa hoạt động không hiệu quả",NEGATIVE
+"Phần ăn quá nhỏ khiến tôi cảm thấy không xứng đáng với giá tiền",NEGATIVE
+"Đồ uống có vị chua bất thường và không thể sử dụng",NEGATIVE
+"Nhân viên không thông báo khi món ăn đã hết",NEGATIVE
+"Tôi rất thất vọng vì chất lượng phục vụ không như cam kết",NEGATIVE
+"Món gà nướng có lớp da giòn và phần thịt rất mềm",POSITIVE
+"Nhân viên hỗ trợ tôi tìm được món phù hợp với khẩu vị",POSITIVE
+"Nhà hàng có không gian thoáng mát và trang trí đẹp",POSITIVE
+"Các món ăn được chuẩn bị cẩn thận và trình bày hấp dẫn",POSITIVE
+"Tôi rất thích hương vị của món hải sản tại đây",POSITIVE
+"Nhân viên luôn giữ thái độ niềm nở khi phục vụ",POSITIVE
+"Đồ ăn nóng và được mang ra ngay sau khi chế biến",POSITIVE
+"Thực đơn có nhiều lựa chọn phù hợp với gia đình",POSITIVE
+"Nhà hàng phục vụ chu đáo từ lúc đón khách đến khi thanh toán",POSITIVE
+"Món tráng miệng có vị ngọt vừa phải, rất dễ ăn",POSITIVE
+"Nguyên liệu được chế biến tươi ngon và hợp vệ sinh",POSITIVE
+"Tôi đánh giá cao cách nhân viên xử lý yêu cầu của khách",POSITIVE
+"Vị trí ngồi thoải mái và không gian rất dễ chịu",POSITIVE
+"Phần ăn đầy đủ, hương vị đúng với mong đợi của tôi",POSITIVE
+"Tôi chắc chắn sẽ quay lại để thưởng thức thêm các món khác",POSITIVE
+"Tôi gọi một phần phở và một cốc trà đá",NEUTRAL
+"Nhà hàng có các bàn dành cho khách đi một mình",NEUTRAL
+"Thực đơn có ghi chú một số món có chứa hải sản",NEUTRAL
+"Tôi đến nhà hàng bằng xe máy vào buổi chiều",NEUTRAL
+"Nhân viên ghi lại yêu cầu không dùng hành của tôi",NEUTRAL
+"Bữa ăn gồm một món chính và hai món ăn kèm",NEUTRAL
+"Nhà hàng có cung cấp hóa đơn sau khi thanh toán",NEUTRAL
+"Tôi ngồi ở bàn số năm trong khu vực bên trong",NEUTRAL
+"Khách hàng có thể lựa chọn ăn tại chỗ hoặc mang về",NEUTRAL
+"Trên thực đơn có các món dành cho trẻ em",NEUTRAL
+"Nhân viên thông báo tổng số tiền trước khi thanh toán",NEUTRAL
+"Nhà hàng có khu vực tiếp nhận đơn giao hàng",NEUTRAL
+"Tôi sử dụng mã đặt bàn để xác nhận thông tin khi đến",NEUTRAL
+"Phần ăn được phục vụ kèm theo một chén nước chấm",NEUTRAL
+"Nhà hàng có nhận thanh toán bằng chuyển khoản ngân hàng",NEUTRAL
+"Món ăn có vị đắng và mùi khét rất khó chịu",NEGATIVE
+"Nhân viên liên tục phớt lờ khi tôi gọi để nhờ hỗ trợ",NEGATIVE
+"Thức ăn không được nấu chín hoàn toàn",NEGATIVE
+"Nhà hàng không giữ đúng thời gian đã xác nhận đặt bàn",NEGATIVE
+"Phần ăn bị thiếu nguyên liệu so với mô tả trên thực đơn",NEGATIVE
+"Nhân viên thu ngân tính tiền sai nhưng không chịu kiểm tra lại",NEGATIVE
+"Đồ ăn giao đến bị nguội lạnh và không được đóng gói kỹ",NEGATIVE
+"Không gian nhà hàng có mùi thuốc lá rất khó chịu",NEGATIVE
+"Nhân viên phục vụ làm mất đơn gọi món của tôi",NEGATIVE
+"Thức ăn có quá nhiều gia vị khiến tôi không thể ăn hết",NEGATIVE
+"Nhà hàng không có biện pháp xử lý khi khách phản ánh món ăn",NEGATIVE
+"Tôi nhận được món ăn khác hoàn toàn với hình ảnh quảng cáo",NEGATIVE
+"Bàn ghế lung lay và dụng cụ ăn uống không được vệ sinh",NEGATIVE
+"Thời gian giao hàng quá lâu khiến món ăn bị hỏng chất lượng",NEGATIVE
+"Tôi không muốn quay lại vì trải nghiệm quá tệ",NEGATIVE
+"Món ăn được nêm nếm rất vừa miệng, hương vị hài hòa",POSITIVE
+"Nhân viên phục vụ tận tình và luôn quan tâm đến khách",POSITIVE
+"Không gian nhà hàng rộng rãi, sạch sẽ và thoáng mát",POSITIVE
+"Thịt bò mềm, rau tươi và nước dùng rất ngon",POSITIVE
+"Tôi hài lòng với chất lượng món ăn và dịch vụ",POSITIVE
+"Nhân viên tiếp nhận và xử lý yêu cầu rất nhanh",POSITIVE
+"Các món ăn được trang trí đẹp mắt và hấp dẫn",POSITIVE
+"Giá cả phù hợp với chất lượng và khẩu phần món ăn",POSITIVE
+"Nhà hàng có nhiều món ngon để lựa chọn",POSITIVE
+"Đồ ăn được phục vụ nóng và đúng thời gian",POSITIVE
+"Tôi cảm thấy thoải mái khi dùng bữa tại đây",POSITIVE
+"Nhân viên luôn vui vẻ và sẵn sàng giải đáp thắc mắc",POSITIVE
+"Nguyên liệu tươi ngon, món ăn có hương vị tự nhiên",POSITIVE
+"Khu vực ăn uống được vệ sinh sạch sẽ",POSITIVE
+"Tôi rất thích cách nhà hàng chăm sóc khách hàng",POSITIVE
+"Món ăn phù hợp với khẩu vị của cả gia đình tôi",POSITIVE
+"Thời gian chờ món nhanh và quy trình phục vụ thuận tiện",POSITIVE
+"Nhà hàng có cách bố trí bàn ghế rất hợp lý",POSITIVE
+"Đồ uống có hương vị thơm ngon và dễ uống",POSITIVE
+"Nhân viên chủ động hỗ trợ khi khách cần thêm dụng cụ",POSITIVE
+"Đây là nơi thích hợp để tổ chức những buổi gặp mặt",POSITIVE
+"Thức ăn được đóng gói cẩn thận khi khách mang về",POSITIVE
+"Tôi đánh giá cao sự chuyên nghiệp của đội ngũ nhân viên",POSITIVE
+"Phần ăn đầy đủ và có mức giá hợp lý",POSITIVE
+"Tôi sẽ giới thiệu nhà hàng này cho người thân",POSITIVE
+"Tôi gọi một phần cơm gà và một chai nước suối",NEUTRAL
+"Nhà hàng có thực đơn điện tử để khách xem món",NEUTRAL
+"Bữa ăn của tôi diễn ra vào khoảng mười hai giờ trưa",NEUTRAL
+"Nhân viên hỏi số lượng khách trước khi sắp xếp bàn",NEUTRAL
+"Tôi chọn một món khai vị và hai món chính",NEUTRAL
+"Nhà hàng có khu vực phục vụ khách đặt bàn trước",NEUTRAL
+"Trên bàn có sẵn muỗng, đũa và khăn giấy",NEUTRAL
+"Tôi thanh toán hóa đơn bằng mã QR ngân hàng",NEUTRAL
+"Thực đơn được chia thành món chính, món phụ và đồ uống",NEUTRAL
+"Nhà hàng có nhận phục vụ tiệc sinh nhật",NEUTRAL
+"Tôi đi ăn cùng gia đình vào ngày chủ nhật",NEUTRAL
+"Nhân viên mang thực đơn đến sau khi khách ngồi vào bàn",NEUTRAL
+"Mỗi phần ăn có một mức giá được ghi trên thực đơn",NEUTRAL
+"Nhà hàng có khu vực chờ dành cho khách",NEUTRAL
+"Tôi đặt hai phần ăn thông qua ứng dụng của nhà hàng",NEUTRAL
+"Trên hóa đơn có thông tin tên món và số lượng",NEUTRAL
+"Nhà hàng có phục vụ các món ăn chay",NEUTRAL
+"Tôi chọn chỗ ngồi gần khu vực cửa ra vào",NEUTRAL
+"Nhân viên xác nhận đơn hàng trước khi gửi đến bếp",NEUTRAL
+"Bữa ăn có một món canh và một món rau",NEUTRAL
+"Nhà hàng mở cửa vào tất cả các ngày trong tuần",NEUTRAL
+"Tôi sử dụng dịch vụ giao đồ ăn đến địa chỉ nhà",NEUTRAL
+"Thực đơn có thông tin về các chương trình khuyến mãi",NEUTRAL
+"Nhà hàng có nhiều loại bàn với số lượng ghế khác nhau",NEUTRAL
+"Nhân viên gửi hóa đơn sau khi hoàn tất thanh toán",NEUTRAL
+"Phần ăn được phục vụ cùng một chén nước chấm",NEUTRAL
+"Món ăn có mùi ôi thiu khiến tôi không thể tiếp tục ăn",NEGATIVE
+"Nhân viên phục vụ có thái độ cáu gắt và thiếu tôn trọng",NEGATIVE
+"Tôi phải chờ rất lâu dù đã đặt món từ trước",NEGATIVE
+"Thức ăn quá nhiều dầu mỡ và gây cảm giác ngấy",NEGATIVE
+"Nhà hàng không vệ sinh bàn sau khi khách trước rời đi",NEGATIVE
+"Giá món ăn quá đắt so với chất lượng thực tế",NEGATIVE
+"Nhân viên giao nhầm đơn hàng và không chịu giải quyết",NEGATIVE
+"Đồ uống có vị lạ và không đảm bảo chất lượng",NEGATIVE
+"Không gian nhà hàng quá chật và thiếu chỗ ngồi",NEGATIVE
+"Món ăn bị nguội và trình bày rất sơ sài",NEGATIVE
+"Nhân viên không phản hồi khi tôi yêu cầu hỗ trợ",NEGATIVE
+"Nhà hàng không thực hiện đúng chương trình giảm giá",NEGATIVE
+"Thực đơn ghi một mức giá nhưng hóa đơn lại tính cao hơn",NEGATIVE
+"Thức ăn không được chế biến đúng theo yêu cầu của tôi",NEGATIVE
+"Tôi nhận được món ăn có nguyên liệu không còn tươi",NEGATIVE
+"Nhân viên làm mất thời gian của khách khi xử lý thanh toán",NEGATIVE
+"Nhà hàng không chuẩn bị đủ bàn dù đã xác nhận đặt chỗ",NEGATIVE
+"Phần ăn quá ít và không đủ cho một người",NEGATIVE
+"Đồ ăn giao đến bị đổ ra ngoài hộp",NEGATIVE
+"Nhà hàng có tiếng ồn lớn khiến tôi không thể trò chuyện",NEGATIVE
+"Nhân viên không xin lỗi khi phục vụ sai món",NEGATIVE
+"Món ăn quá mặn và không thể điều chỉnh lại",NEGATIVE
+"Thời gian giao hàng chậm hơn nhiều so với dự kiến",NEGATIVE
+"Tôi không hài lòng vì nhà hàng xử lý phản ánh thiếu trách nhiệm",NEGATIVE
+"Chất lượng món ăn và dịch vụ đều khiến tôi thất vọng",NEGATIVE
