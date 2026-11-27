@@ -100,7 +100,10 @@ def chat(request: ChatRequest):
                 "message": request.message,
                 "intent": result["intent"],
                 "confidence": result["confidence"],
-                "entities": result["entities"]
+                "entities": result["entities"],
+                "reply": result["reply"],
+                "response": result["reply"],
+                "botMessage": result["reply"],
             }
         }
 

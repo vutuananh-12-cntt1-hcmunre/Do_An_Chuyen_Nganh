@@ -1,4 +1,3 @@
-
 package com.example.restaurant_management.service.impl;
 
 import java.math.BigDecimal;
@@ -9,6 +8,7 @@ import java.time.ZoneId;
 import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Locale;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -73,7 +73,6 @@ public class ChatbotServiceImpl implements ChatbotService {
         this.reservationService = reservationService;
     }
 
-    // Xử lý tin nhắn và lưu lịch sử trò chuyện
     @Override
     public ChatbotMessageResponse processMessage(
             String username,
@@ -89,7 +88,6 @@ public class ChatbotServiceImpl implements ChatbotService {
             sessionId = chatSessionRepository.createSession(userId);
         }
 
-        // Lưu tin nhắn người dùng
         chatMessageRepository.insertMessage(
                 sessionId,
                 "USER",
@@ -129,7 +127,6 @@ public class ChatbotServiceImpl implements ChatbotService {
                     + "Bạn vui lòng thử lại.";
         }
 
-        // Lưu câu trả lời chatbot
         chatMessageRepository.insertMessage(
                 sessionId,
                 "BOT",
@@ -142,7 +139,6 @@ public class ChatbotServiceImpl implements ChatbotService {
         );
     }
 
-    // Kiểm tra quyền sở hữu phiên trò chuyện
     private Integer validateSessionOwnership(
             String username,
             Integer sessionId) {
@@ -164,7 +160,6 @@ public class ChatbotServiceImpl implements ChatbotService {
         return userId;
     }
 
-    // Lấy lịch sử trò chuyện
     @Override
     public List<ChatMessageRepository.ChatMessage> getChatHistory(
             String username,
@@ -175,7 +170,6 @@ public class ChatbotServiceImpl implements ChatbotService {
         return chatMessageRepository.findBySessionId(sessionId);
     }
 
-    // Đóng phiên trò chuyện
     @Override
     public void closeChatSession(
             String username,
@@ -186,7 +180,6 @@ public class ChatbotServiceImpl implements ChatbotService {
         chatSessionRepository.closeSession(sessionId);
     }
 
-    // Phân tích câu hỏi và xử lý theo intent
     private String generateReply(
             String message,
             List<ChatMessageRepository.ChatMessage> history) {
@@ -206,11 +199,6 @@ public class ChatbotServiceImpl implements ChatbotService {
         logger.info("Reservation context: {}", reservationContext);
         logger.info("Confirmation prompt: {}", confirmationPrompt);
 
-        /*
-         * BƯỚC 1:
-         * Nếu chatbot đang chờ xác nhận thì xử lý Có/Không
-         * trước khi gọi Python.
-         */
         if (confirmationPrompt) {
 
             if (isAffirmative(message)) {
@@ -245,23 +233,12 @@ public class ChatbotServiceImpl implements ChatbotService {
                     + "hoặc Không để hủy yêu cầu đặt bàn nhé.";
         }
 
-        /*
-         * BƯỚC 2:
-         * Nếu đang trong luồng đặt bàn thì lấy lịch sử
-         * thuộc yêu cầu hiện tại.
-         *
-         * Nếu không, chỉ gửi tin nhắn mới sang Python.
-         */
         String analysisMessage = reservationContext
                 ? combineRecentUserMessages(history)
                 : message;
 
         logger.info("Analysis message: {}", analysisMessage);
 
-        /*
-         * BƯỚC 3:
-         * Gửi nội dung sang Python để phân tích intent và entities.
-         */
         ChatResponse response =
                 chatbotServiceClient.processMessage(analysisMessage);
 
@@ -278,27 +255,18 @@ public class ChatbotServiceImpl implements ChatbotService {
             return "Xin lỗi, tôi chưa hiểu câu hỏi của bạn.";
         }
 
-        /*
-         * BƯỚC 4:
-         * Tiếp tục luồng đặt bàn nếu đang thu thập thông tin
-         * hoặc Python nhận diện intent RESERVE_TABLE.
-         */
         if (reservationContext
                 || "RESERVE_TABLE".equals(data.intent())) {
 
             return handleReservation(data);
         }
 
-        /*
-         * BƯỚC 5:
-         * Xử lý những intent còn lại.
-         */
         return switch (data.intent()) {
 
             case "GREETING" ->
-                "Xin chào! Tôi là trợ lý ảo của nhà hàng. "
-                + "Tôi có thể giúp bạn tìm món ăn, lọc món theo giá, "
-                + "tra cứu khuyến mãi, tìm món bán chạy và đặt bàn.";
+                "Xin chào! Mình là trợ lý Bếp Mận & Lửa. "
+                + "Bạn có thể hỏi món có gì, lọc theo giá, "
+                + "món bán chạy, khuyến mãi hoặc đặt bàn nhé.";
 
             case "FIND_DISH" ->
                 findDish(data.entities());
@@ -313,13 +281,12 @@ public class ChatbotServiceImpl implements ChatbotService {
                 findPopularDishes();
 
             default ->
-                "Xin lỗi, tôi chưa hiểu câu hỏi. "
-                + "Bạn có thể hỏi về món ăn, giá món ăn, "
-                + "món bán chạy, khuyến mãi hoặc đặt bàn.";
+                "Mình chưa nắm rõ ý bạn. Bạn có thể hỏi: "
+                + "\"có món gì\", \"món dưới 50k\", "
+                + "\"món bán chạy\", \"khuyến mãi\" hoặc \"đặt bàn\".";
         };
     }
 
-    // Lấy câu trả lời gần nhất của chatbot
     private String getLatestBotMessage(
             List<ChatMessageRepository.ChatMessage> history) {
 
@@ -335,7 +302,6 @@ public class ChatbotServiceImpl implements ChatbotService {
         return null;
     }
 
-    // Kiểm tra chatbot có đang yêu cầu khách tiếp tục đặt bàn không
     private boolean isReservationContext(String previousBotMessage) {
 
         if (previousBotMessage == null) {
@@ -345,7 +311,6 @@ public class ChatbotServiceImpl implements ChatbotService {
         String content =
                 previousBotMessage.toLowerCase(Locale.ROOT);
 
-        // Yêu cầu đã hoàn thành hoặc đã bị hủy
         if (isReservationFinishedMessage(content)) {
             return false;
         }
@@ -353,7 +318,6 @@ public class ChatbotServiceImpl implements ChatbotService {
         return isReservationPromptMessage(content);
     }
 
-    // Kiểm tra chatbot có đang chờ xác nhận không
     private boolean isConfirmationPrompt(String previousBotMessage) {
 
         if (previousBotMessage == null) {
@@ -368,14 +332,12 @@ public class ChatbotServiceImpl implements ChatbotService {
                 || content.contains("không"));
     }
 
-    // Nhận diện tin nhắn kết thúc yêu cầu đặt bàn
     private boolean isReservationFinishedMessage(String content) {
 
         return content.contains("đặt bàn thành công")
                 || content.contains("đã hủy yêu cầu đặt bàn");
     }
 
-    // Nhận diện tin nhắn chatbot đang yêu cầu thông tin đặt bàn
     private boolean isReservationPromptMessage(String content) {
 
         return content.contains("đặt bàn")
@@ -389,30 +351,11 @@ public class ChatbotServiceImpl implements ChatbotService {
                 );
     }
 
-    /*
-     * Ghép tin nhắn thuộc yêu cầu đặt bàn hiện tại.
-     *
-     * Không lấy các tin nhắn trước câu trả lời BOT
-     * gần nhất không thuộc luồng đặt bàn.
-     */
     private String combineRecentUserMessages(
             List<ChatMessageRepository.ChatMessage> history) {
 
         int startIndex = 0;
 
-        /*
-         * Tìm ranh giới của yêu cầu đặt bàn hiện tại.
-         *
-         * Các câu trả lời BOT như:
-         * - Xin chào...
-         * - Đặt bàn thành công...
-         * - Đã hủy yêu cầu đặt bàn...
-         *
-         * được xem là ranh giới giữa các yêu cầu.
-         *
-         * Những câu hỏi thu thập thông tin đặt bàn
-         * không được xem là ranh giới.
-         */
         for (int i = history.size() - 1; i >= 0; i--) {
 
             ChatMessageRepository.ChatMessage item = history.get(i);
@@ -455,7 +398,6 @@ public class ChatbotServiceImpl implements ChatbotService {
         return combined.toString();
     }
 
-    // Kiểm tra câu trả lời đồng ý
     private boolean isAffirmative(String message) {
 
         String text = message.trim().toLowerCase(Locale.ROOT);
@@ -473,7 +415,6 @@ public class ChatbotServiceImpl implements ChatbotService {
                 || text.equals("tôi đồng ý");
     }
 
-    // Kiểm tra câu trả lời từ chối
     private boolean isNegative(String message) {
 
         String text = message.trim().toLowerCase(Locale.ROOT);
@@ -488,7 +429,6 @@ public class ChatbotServiceImpl implements ChatbotService {
                 || text.equals("từ chối");
     }
 
-    // Xử lý yêu cầu đặt bàn
     private String handleReservation(ChatResponse.ChatData data) {
 
         ChatResponse.ChatEntities entities = data.entities();
@@ -529,7 +469,6 @@ public class ChatbotServiceImpl implements ChatbotService {
                     + "Bạn vui lòng chọn ngày và giờ khác nhé.";
         }
 
-        // Mỗi lượt đặt bàn mặc định kéo dài 2 giờ
         LocalDateTime reservationEndTime =
                 reservationTime.plusHours(2);
 
@@ -546,7 +485,6 @@ public class ChatbotServiceImpl implements ChatbotService {
                     + "Bạn vui lòng chọn thời gian khác nhé.";
         }
 
-        // Chọn bàn có sức chứa phù hợp nhất
         Table suggestedTable = availableTables.get(0);
 
         return "Nhà hàng hiện có bàn phù hợp với yêu cầu của bạn:\n"
@@ -559,7 +497,6 @@ public class ChatbotServiceImpl implements ChatbotService {
                 + "Vui lòng trả lời Có hoặc Không.";
     }
 
-    // Chuyển thông tin ngày và giờ thành LocalDateTime
     private LocalDateTime extractReservationDateTime(
             ChatResponse.ChatEntities entities) {
 
@@ -597,7 +534,6 @@ public class ChatbotServiceImpl implements ChatbotService {
         }
     }
 
-    // Tạo đặt bàn sau khi khách xác nhận
     private String confirmReservation(ChatResponse.ChatData data) {
 
         ChatResponse.ChatEntities entities = data.entities();
@@ -628,7 +564,6 @@ public class ChatbotServiceImpl implements ChatbotService {
         LocalDateTime reservationEndTime =
                 reservationTime.plusHours(2);
 
-        // Kiểm tra lại bàn trước khi tạo đặt bàn
         List<Table> availableTables =
                 tableRepository.findAvailableTables(
                         entities.guest_count(),
@@ -651,11 +586,9 @@ public class ChatbotServiceImpl implements ChatbotService {
         request.setGuestCount(entities.guest_count());
         request.setCustomerNote("Đặt bàn qua trợ lý ảo");
 
-        // Tạo đặt bàn
         Integer reservationId =
                 reservationService.createReservation(request);
 
-        // Lấy thông tin đặt bàn vừa tạo
         ReservationResponse reservation =
                 reservationService.getReservationById(reservationId);
 
@@ -669,7 +602,6 @@ public class ChatbotServiceImpl implements ChatbotService {
                     + "Bạn vui lòng liên hệ nhân viên nhà hàng.";
         }
 
-        // Chuyển trạng thái sang tiếng Việt
         String status;
 
         if ("PENDING".equalsIgnoreCase(
@@ -701,28 +633,68 @@ public class ChatbotServiceImpl implements ChatbotService {
                 + "Cảm ơn bạn đã đặt bàn tại nhà hàng!";
     }
 
-    // Tìm món ăn theo tên
+    /**
+     * FIND_DISH:
+     * - Có dish_name → tìm theo tên
+     * - Không có → gợi ý vài món đang bán (không hỏi ngược "Bạn muốn tìm món nào?")
+     */
     private String findDish(ChatResponse.ChatEntities entities) {
 
-        if (entities == null
-                || entities.dish_name() == null
-                || entities.dish_name().isBlank()) {
+        String dishName = entities != null ? entities.dish_name() : null;
 
-            return "Bạn muốn tìm món ăn nào?";
+        if (dishName == null || dishName.isBlank()) {
+
+            List<Dish> all = dishRepository.findAll();
+
+            List<Dish> available = all == null
+                    ? List.of()
+                    : all.stream()
+                            .filter(d -> Boolean.TRUE.equals(d.getIsAvailable()))
+                            .collect(Collectors.toList());
+
+            if (available.isEmpty()) {
+                // fallback: lấy tất cả nếu không lọc được isAvailable
+                available = all == null ? List.of() : all;
+            }
+
+            if (available.isEmpty()) {
+                return "Hiện thực đơn đang cập nhật. "
+                        + "Bạn quay lại sau hoặc hỏi nhân viên nhé. "
+                        + "Hoặc thử: \"món bán chạy\", \"món dưới 50k\".";
+            }
+
+            StringBuilder result = new StringBuilder(
+                    "Bên mình có nhiều món trên thực đơn. Gợi ý một số món đang phục vụ:\n"
+            );
+
+            int limit = Math.min(6, available.size());
+            for (int i = 0; i < limit; i++) {
+                Dish dish = available.get(i);
+                result.append("- ")
+                        .append(dish.getDishName())
+                        .append(": ")
+                        .append(dish.getCurrentPrice())
+                        .append(" đồng\n");
+            }
+
+            result.append("\nBạn muốn xem món cụ thể (vd phở, cơm tấm), "
+                    + "lọc theo giá (\"món dưới 50k\"), hay món bán chạy?");
+
+            return result.toString();
         }
-
-        String dishName = entities.dish_name();
 
         List<Dish> dishes =
                 dishRepository.searchByName(dishName);
 
         if (dishes == null || dishes.isEmpty()) {
-            return "Nhà hàng hiện chưa tìm thấy món "
-                    + dishName + ".";
+            return "Nhà hàng hiện chưa tìm thấy món \""
+                    + dishName
+                    + "\". Bạn thử tên khác, hỏi \"có món gì\", "
+                    + "hoặc \"món bán chạy\" nhé.";
         }
 
         StringBuilder result = new StringBuilder(
-                "Đây là những món ăn phù hợp:\n"
+                "Đây là những món phù hợp:\n"
         );
 
         for (Dish dish : dishes) {
@@ -737,11 +709,11 @@ public class ChatbotServiceImpl implements ChatbotService {
         return result.toString();
     }
 
-    // Lọc món ăn theo tên và khoảng giá
     private String filterDish(ChatResponse.ChatEntities entities) {
 
         if (entities == null) {
-            return "Bạn vui lòng cho biết tên món ăn hoặc mức giá muốn tìm.";
+            return "Bạn vui lòng cho biết tên món hoặc mức giá muốn tìm "
+                    + "(vd: món dưới 50 nghìn).";
         }
 
         Integer min = entities.price_min();
@@ -752,7 +724,8 @@ public class ChatbotServiceImpl implements ChatbotService {
                 && max == null
                 && (dishName == null || dishName.isBlank())) {
 
-            return "Bạn muốn tìm món ăn theo tên hoặc khoảng giá nào?";
+            return "Bạn muốn lọc theo khoảng giá nào? "
+                    + "Ví dụ: \"món dưới 50k\" hoặc \"từ 30k đến 80k\".";
         }
 
         BigDecimal minPrice = min == null
@@ -771,15 +744,17 @@ public class ChatbotServiceImpl implements ChatbotService {
                 );
 
         if (dishes == null || dishes.isEmpty()) {
-            return "Không tìm thấy món ăn phù hợp với điều kiện của bạn.";
+            return "Không tìm thấy món phù hợp với điều kiện của bạn. "
+                    + "Thử nới khoảng giá hoặc hỏi \"có món gì\" nhé.";
         }
 
         StringBuilder result = new StringBuilder(
-                "Các món ăn phù hợp với yêu cầu của bạn:\n"
+                "Các món phù hợp với yêu cầu của bạn:\n"
         );
 
-        for (Dish dish : dishes) {
-
+        int limit = Math.min(10, dishes.size());
+        for (int i = 0; i < limit; i++) {
+            Dish dish = dishes.get(i);
             result.append("- ")
                     .append(dish.getDishName())
                     .append(": ")
@@ -787,17 +762,23 @@ public class ChatbotServiceImpl implements ChatbotService {
                     .append(" đồng\n");
         }
 
+        if (dishes.size() > limit) {
+            result.append("... và ")
+                    .append(dishes.size() - limit)
+                    .append(" món khác trên thực đơn.");
+        }
+
         return result.toString();
     }
 
-    // Tra cứu chương trình khuyến mãi
     private String findPromotion() {
 
         List<Promotion> promotions =
                 promotionRepository.findCurrentlyAvailable();
 
         if (promotions == null || promotions.isEmpty()) {
-            return "Hiện tại nhà hàng chưa có chương trình khuyến mãi nào.";
+            return "Hiện tại nhà hàng chưa có chương trình khuyến mãi nào. "
+                    + "Bạn có thể xem món bán chạy hoặc hỏi món theo giá nhé.";
         }
 
         StringBuilder result = new StringBuilder(
@@ -816,18 +797,18 @@ public class ChatbotServiceImpl implements ChatbotService {
         return result.toString();
     }
 
-    // Tra cứu Top 5 món ăn bán chạy nhất
     private String findPopularDishes() {
 
         List<PopularDish> dishes =
                 dishRepository.findTopSellingDishes();
 
         if (dishes == null || dishes.isEmpty()) {
-            return "Hiện tại chưa có dữ liệu món ăn bán chạy.";
+            return "Hiện tại chưa có dữ liệu món bán chạy. "
+                    + "Bạn thử hỏi \"có món gì\" để xem gợi ý thực đơn nhé.";
         }
 
         StringBuilder result = new StringBuilder(
-                "Top 5 món ăn bán chạy nhất tại nhà hàng:\n"
+                "Top món bán chạy tại nhà hàng:\n"
         );
 
         int rank = 1;
