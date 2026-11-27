@@ -1,7 +1,8 @@
-
 package com.example.restaurant_management.service.impl;
 
+import java.security.SecureRandom;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,22 +17,30 @@ import com.example.restaurant_management.dto.User;
 import com.example.restaurant_management.repository.UserRepository;
 import com.example.restaurant_management.security.JwtService;
 import com.example.restaurant_management.service.AuthService;
+import com.example.restaurant_management.service.EmailService;
 
 @Service
 public class AuthServiceImpl implements AuthService {
 
+    private static final String TEMP_PASSWORD_CHARS =
+        "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789";
+
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
+    private final EmailService emailService;
+    private final SecureRandom secureRandom = new SecureRandom();
 
     public AuthServiceImpl(
             UserRepository userRepository,
             PasswordEncoder passwordEncoder,
-            JwtService jwtService) {
+            JwtService jwtService,
+            EmailService emailService) {
 
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtService = jwtService;
+        this.emailService = emailService;
     }
 
     @Override
@@ -80,38 +89,88 @@ public class AuthServiceImpl implements AuthService {
     @Transactional
     public void register(RegisterRequest request) {
 
-        // Kiểm tra username đã tồn tại
         if (userRepository.existsByUsername(request.getUsername())) {
             throw new ResponseStatusException(
                     HttpStatus.CONFLICT,
                     "Username đã tồn tại");
         }
 
-        // Kiểm tra email đã tồn tại
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new ResponseStatusException(
                     HttpStatus.CONFLICT,
                     "Email đã được sử dụng");
         }
 
-        // Tạo tài khoản mới
         User user = new User();
 
         user.setUsername(request.getUsername());
         user.setEmail(request.getEmail());
-
-        // Mã hóa mật khẩu bằng BCrypt
         user.setPasswordHash(
                 passwordEncoder.encode(request.getPassword()));
-
         user.setFullName(request.getFullName());
         user.setPhone(request.getPhone());
         user.setIsActive(true);
 
-        // Lưu tài khoản và lấy ID
         Integer userId = userRepository.insert(user);
 
-        // Tự động gán quyền CUSTOMER (role_id = 4)
+        // CUSTOMER role_id = 4
         userRepository.assignRole(userId, 4);
+    }
+
+    /**
+     * Quên mật khẩu:
+     * - Nếu email tồn tại: tạo mật khẩu tạm, cập nhật DB, gửi mail.
+     * - Nếu không tồn tại: không báo lỗi (tránh lộ thông tin).
+     */
+    @Override
+    @Transactional
+    public void forgotPassword(String email) {
+        if (email == null || email.isBlank()) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "Email không được để trống");
+        }
+
+        String normalized = email.trim().toLowerCase();
+
+        Optional<User> optionalUser = userRepository.findByEmail(normalized);
+
+        // Thử tìm đúng email gốc nếu DB lưu hoa/thường khác
+        if (optionalUser.isEmpty()) {
+            optionalUser = userRepository.findByEmail(email.trim());
+        }
+
+        if (optionalUser.isEmpty()) {
+            // Không tiết lộ email có tồn tại hay không
+            return;
+        }
+
+        User user = optionalUser.get();
+
+        if (!Boolean.TRUE.equals(user.getIsActive())) {
+            // Tài khoản khóa: vẫn im lặng
+            return;
+        }
+
+        String temporaryPassword = generateTemporaryPassword(10);
+
+        userRepository.changePassword(
+                user.getUserId(),
+                passwordEncoder.encode(temporaryPassword));
+
+        emailService.sendTemporaryPassword(
+                user.getEmail(),
+                user.getFullName(),
+                user.getUsername(),
+                temporaryPassword);
+    }
+
+    private String generateTemporaryPassword(int length) {
+        StringBuilder sb = new StringBuilder(length);
+        for (int i = 0; i < length; i++) {
+            int index = secureRandom.nextInt(TEMP_PASSWORD_CHARS.length());
+            sb.append(TEMP_PASSWORD_CHARS.charAt(index));
+        }
+        return sb.toString();
     }
 }

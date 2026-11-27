@@ -409,6 +409,11 @@ public class SecurityConfig {
                 .requestMatchers(
                     "/api/statistics/**"
                 ).hasAnyRole("ADMIN", "MANAGER")
+                .requestMatchers(
+    "/api/auth/login",
+    "/api/auth/register",
+    "/api/auth/forgot-password"
+).permitAll()
 
                 // =========================
                 // API CÒN LẠI

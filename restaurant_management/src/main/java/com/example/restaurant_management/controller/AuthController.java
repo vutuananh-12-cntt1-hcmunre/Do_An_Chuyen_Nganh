@@ -1,5 +1,6 @@
-
 package com.example.restaurant_management.controller;
+
+import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -45,5 +46,29 @@ public class AuthController {
             @Valid @RequestBody RegisterRequest request) {
 
         authService.register(request);
+    }
+
+    // Quên mật khẩu — gửi mật khẩu tạm qua email (Gmail SMTP)
+    @PostMapping("/forgot-password")
+    public ResponseEntity<?> forgotPassword(
+            @RequestBody Map<String, String> body) {
+
+        String email = body != null ? body.get("email") : null;
+
+        if (email == null || email.isBlank()) {
+            return ResponseEntity.badRequest().body(
+                Map.of("message", "Email không được để trống")
+            );
+        }
+
+        authService.forgotPassword(email.trim());
+
+        // Luôn trả message giống nhau (không lộ email có tồn tại hay không)
+        return ResponseEntity.ok(
+            Map.of(
+                "message",
+                "Nếu email tồn tại trong hệ thống, mật khẩu tạm thời đã được gửi. Vui lòng kiểm tra hộp thư (kể cả Spam)."
+            )
+        );
     }
 }

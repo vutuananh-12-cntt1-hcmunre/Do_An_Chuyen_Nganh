@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import {
   LockKeyhole,
   UserRound,
@@ -96,7 +95,7 @@ export default function LoginPage() {
       } else {
         setError(
           err.response?.data?.message ||
-          "Đăng nhập thất bại. Vui lòng thử lại."
+            "Đăng nhập thất bại. Vui lòng thử lại."
         );
       }
     }
@@ -104,11 +103,8 @@ export default function LoginPage() {
 
   return (
     <main className="grid min-h-screen bg-page lg:grid-cols-2">
-
       {/* LEFT: FOOD SLIDESHOW */}
       <section className="relative hidden min-h-screen overflow-hidden bg-brand p-12 text-white lg:flex lg:flex-col lg:justify-between">
-
-        {/* FOOD IMAGES */}
         <div className="food-slideshow">
           {foodImages.map((image, index) => (
             <img
@@ -120,10 +116,8 @@ export default function LoginPage() {
           ))}
         </div>
 
-        {/* DARK OVERLAY */}
         <div className="absolute inset-0 z-[1] bg-[#25002D]/70" />
 
-        {/* BRAND */}
         <div className="relative z-10 flex items-center gap-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-brand">
             <Store size={25} />
@@ -140,9 +134,7 @@ export default function LoginPage() {
           </div>
         </div>
 
-        {/* BRAND MESSAGE */}
         <div className="relative z-10 max-w-lg">
-
           <p className="mb-5 text-xs font-bold tracking-[3px] text-brand-orchid">
             QUẢN LÝ NHÀ HÀNG THÔNG MINH
           </p>
@@ -154,12 +146,10 @@ export default function LoginPage() {
           </h2>
 
           <p className="mt-6 max-w-md text-sm leading-7 text-white/85">
-            Nền tảng quản lý nhà hàng tích hợp đặt món,
-            vận hành bếp, quản lý kho và phân tích phản hồi
-            khách hàng bằng trí tuệ nhân tạo.
+            Nền tảng quản lý nhà hàng tích hợp đặt món, vận hành bếp, quản lý
+            kho và phân tích phản hồi khách hàng bằng trí tuệ nhân tạo.
           </p>
 
-          {/* SLIDE INDICATORS */}
           <div className="mt-8 flex items-center gap-2">
             {foodImages.map((image, index) => (
               <span
@@ -170,18 +160,14 @@ export default function LoginPage() {
           </div>
         </div>
 
-        {/* FOOTER */}
         <p className="relative z-10 text-xs text-white/65">
           © 2026 Bếp Mận & Lửa. Restaurant Management System.
         </p>
-
       </section>
 
       {/* RIGHT: LOGIN FORM */}
       <section className="flex min-h-screen items-center justify-center px-6 py-12">
-
         <div className="w-full max-w-[420px]">
-
           <div className="mb-10 lg:hidden">
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-white">
               <Store size={24} />
@@ -207,7 +193,6 @@ export default function LoginPage() {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
-
             <div>
               <label className="mb-2 block text-sm font-semibold text-gray-700">
                 Tên đăng nhập
@@ -228,9 +213,17 @@ export default function LoginPage() {
             </div>
 
             <div>
-              <label className="mb-2 block text-sm font-semibold text-gray-700">
-                Mật khẩu
-              </label>
+              <div className="mb-2 flex items-center justify-between">
+                <label className="block text-sm font-semibold text-gray-700">
+                  Mật khẩu
+                </label>
+                <Link
+                  to="/forgot-password"
+                  className="text-xs font-semibold text-brand hover:underline"
+                >
+                  Quên mật khẩu?
+                </Link>
+              </div>
 
               <div className="flex h-12 items-center gap-3 rounded-lg border border-border bg-white px-4 transition focus-within:border-brand focus-within:ring-2 focus-within:ring-brand/10">
                 <LockKeyhole size={18} className="shrink-0 text-gray-400" />
@@ -280,15 +273,23 @@ export default function LoginPage() {
                 </>
               )}
             </button>
-
           </form>
+
+          <p className="mt-6 text-center text-sm text-gray-500">
+            Chưa có tài khoản?{" "}
+            <Link
+              to="/register"
+              className="font-semibold text-brand hover:underline"
+            >
+              Đăng ký ngay
+            </Link>
+          </p>
 
           <p className="mt-8 text-center text-xs leading-6 text-gray-400">
             Hệ thống quản lý nhà hàng
             <br />
             Bếp Mận & Lửa © 2026
           </p>
-
         </div>
       </section>
     </main>

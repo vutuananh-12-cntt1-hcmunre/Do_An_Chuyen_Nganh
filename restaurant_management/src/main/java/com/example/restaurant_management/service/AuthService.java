@@ -10,4 +10,5 @@ public interface AuthService {
     LoginResponse login(LoginRequest request);
 
     void register(RegisterRequest request);
+    void forgotPassword(String email);
 }
