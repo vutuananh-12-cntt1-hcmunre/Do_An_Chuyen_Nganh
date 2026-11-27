@@ -1,4 +1,3 @@
-
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
@@ -9,6 +8,12 @@ import AppLayout from "../components/layout/AppLayout";
 // AUTH
 // =========================
 import LoginPage from "../pages/LoginPage";
+import RegisterPage from "../pages/RegisterPage";
+import ForgotPasswordPage from "../pages/ForgotPasswordPage";
+import ProfilePage from "../pages/ProfilePage";
+import ChangePasswordPage from "../pages/ChangePasswordPage";
+import NotFoundPage from "../pages/NotFoundPage";
+import UnauthorizedPage from "../pages/UnauthorizedPage";
 
 // =========================
 // ADMIN / MANAGER
@@ -69,23 +74,6 @@ function getHomePath(roles = []) {
 }
 
 // =========================
-// TRANG PLACEHOLDER
-// =========================
-function PlaceholderPage({ title }) {
-  return (
-    <div className="rounded-xl border border-border bg-white p-8">
-      <h1 className="font-heading text-xl font-bold text-brand">
-        {title}
-      </h1>
-
-      <p className="mt-2 text-sm text-gray-500">
-        Giao diện chức năng sẽ được triển khai ở bước tiếp theo.
-      </p>
-    </div>
-  );
-}
-
-// =========================
 // ĐIỀU HƯỚNG TRANG CHỦ
 // =========================
 function HomeRedirect() {
@@ -110,14 +98,30 @@ export default function AppRoutes() {
   return (
     <Routes>
       {/* =========================
-          ĐĂNG NHẬP
+          AUTH
       ========================= */}
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/forgot-password" element={<ForgotPasswordPage />} />
 
       {/* =========================
           ĐIỀU HƯỚNG TRANG CHỦ
       ========================= */}
       <Route path="/" element={<HomeRedirect />} />
+
+      {/* =========================
+          HỒ SƠ — MỌI ROLE ĐÃ ĐĂNG NHẬP
+      ========================= */}
+      <Route
+        element={
+          <ProtectedRoute
+            allowedRoles={["ADMIN", "MANAGER", "EMPLOYEE", "CUSTOMER"]}
+          />
+        }
+      >
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/change-password" element={<ChangePasswordPage />} />
+      </Route>
 
       {/* =========================
           ADMIN VÀ MANAGER
@@ -292,12 +296,14 @@ export default function AppRoutes() {
       </Route>
 
       {/* =========================
-          KHÔNG TÌM THẤY TRANG
+          403 — KHÔNG CÓ QUYỀN
       ========================= */}
-      <Route
-        path="*"
-        element={<PlaceholderPage title="Không tìm thấy trang" />}
-      />
+      <Route path="/unauthorized" element={<UnauthorizedPage />} />
+
+      {/* =========================
+          404 — KHÔNG TÌM THẤY TRANG
+      ========================= */}
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 }
